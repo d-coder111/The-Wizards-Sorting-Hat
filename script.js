@@ -11,10 +11,20 @@ document.getElementById('quizForm').addEventListener('submit', function (e) {
 
     // Count the selected answers
     const form = new FormData(this);
+    let attemptedQuestions = 0; // Track attempted questions
+
     for (let pair of form.entries()) {
         if (housePoints[pair[1]] !== undefined) {
             housePoints[pair[1]] += 1;
+            attemptedQuestions++; // Increment for each attempted question
         }
+    }
+
+    // Check if any questions were attempted
+    if (attemptedQuestions === 0) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = "You're out of Hogwarts!";
+        return; // Stop execution if no questions were attempted
     }
 
     // Determine the house with the highest points
