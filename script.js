@@ -56,3 +56,15 @@ document.getElementById('quizForm').addEventListener('submit', function (e) {
     houseImage.alt = `${assignedHouse} logo`;
     houseImage.style.display = 'block';
 });
+
+
+const sparkles = document.querySelectorAll('.sparkle');
+const container = document.querySelector('.sparkles');
+
+sparkles.forEach(sparkle => {
+    const x = Math.random() * container.clientWidth; // Random x position
+    const y = Math.random() * container.clientHeight; // Random y position
+    sparkle.style.left = `${x}px`; // Set random x
+    sparkle.style.top = `${y}px`; // Set random y
+});
+
