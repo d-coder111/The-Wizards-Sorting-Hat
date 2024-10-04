@@ -1,5 +1,8 @@
 # Sorting-hat🎩🧙‍♀️
-📌A fun web-based quiz that determines which Hogwarts House (Gryffindor, Hufflepuff, Ravenclaw, or Slytherin) you belong to based on your personality traits. The website asks a series of questions, and based on the user's answers, it sorts them into a house.
+
+📌A fun web-based quiz that determines which Hogwarts House (Gryffindor, Hufflepuff, Ravenclaw, or Slytherin) you belong
+to based on your personality traits. The website asks a series of questions, and based on the user's answers, it sorts
+them into a house.
 
 
 <div align="left">
@@ -13,26 +16,27 @@
 
 ### 🌟 How to Contribute:
 
-1.  Register your GitHub ID on [Hackoberfest Website](https://hacktoberfest.com/auth/)
-2.  Fork the repository.
-3.  Implement the features listed in the suggested improvements section. Feel free to contribute your own ideas for enhancing the project further.
-4.  Add your name in contributors section as per the format.
-5.  Commit and push your changes.
-6.  Create a pull request to the original repository.
-7.  Your pull request will be reviewed and merged.
-
-
+1. Register your GitHub ID on [Hackoberfest Website](https://hacktoberfest.com/auth/)
+2. Fork the repository.
+3. Implement the features listed in the suggested improvements section. Feel free to contribute your own ideas for
+   enhancing the project further.
+4. Add your name in contributors section as per the format.
+5. Commit and push your changes.
+6. Create a pull request to the original repository.
+7. Your pull request will be reviewed and merged.
 
 ### 🎯 Suggested Improvements:
--  ❓Additional Questions: Add more questions to the quiz for enhanced user engagement.
--  🏘Detailed House Descriptions: Provide descriptions for each house after the user is sorted.
--  💖Animations and Effects: Incorporate fun animations or effects during the sorting process.
--  🔊Sound Effects: Add sound effects to enhance the overall user experience.
--  💫Theme Options: Allow users to select different themes for the quiz interface.
+
+- ❓Additional Questions: Add more questions to the quiz for enhanced user engagement.
+- 🏘Detailed House Descriptions: Provide descriptions for each house after the user is sorted.
+- 💖Animations and Effects: Incorporate fun animations or effects during the sorting process.
+- 🔊Sound Effects: Add sound effects to enhance the overall user experience.
+- 💫Theme Options: Allow users to select different themes for the quiz interface.
 
 #### 💡You are welcome to add your own better ideas and features to this project.
 
 ### Enjoy finding out which Hogwarts house you truly belong to!🧙‍♂️✨
+
 #### 💟😊Feel like sprinkling a little stardust of encouragement? Hit that star button on the repository to let us know you're cheering us on!🌟
 
 ## Contributors
@@ -43,5 +47,7 @@
 <table>
 <tr>          
 <td align="center"><a href="https://github.com/d-coder111"><kbd><img src="https://avatars.githubusercontent.com/u/82580017?v=4" width="100px;" alt=""/></kbd><br /><sub><b>d-coder111  </b></sub></a><br /> :computer:  </td>
+  <td align="center"><a href="https://github.com/DewashishCodes"><kbd><img src="https://avatars.githubusercontent.com/u/176646422?v=4" width="100px;" alt=""/></kbd><br /><sub><b>DewashishCodes</b></sub></a><br /> :computer:  </td>
+ <td align="center"><a href="https://github.com/D-Binara"><kbd><img src="https://avatars.githubusercontent.com/u/119029171?v=4" width="100px;" alt=""/></kbd><br /><sub><b>D-Binara</b></sub></a><br /> :computer:  </td>
 </tr>
 </table>
