@@ -74,7 +74,8 @@ button:hover {
     box-shadow: 0 0 30px rgba(255, 223, 0, 1), 0 0 60px rgba(255, 223, 0, 0.8);
 }
 
-.result::before, .result::after {
+.result::before,
+.result::after {
     content: "";
     position: absolute;
     width: 20px;
@@ -122,13 +123,24 @@ button:hover {
 
 }
 
+
+
 .spell-container {
     text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin: 20px 0px;
+}
+
+.logo-img {
+    width: 33%;
+    border-radius: 10px;
+}
+
+.houses-img {
+    width: 33%;
+    border-radius: 10px;
 }
 
 .spell-internal-container {
@@ -219,11 +231,22 @@ button:hover {
 }
 
 @keyframes blinkCaret {
-    from, to {
+
+    from,
+    to {
         border-color: transparent;
     }
 
     50% {
         border-color: transparent;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .logo-img,
+    .houses-img {
+        display: none;
     }
 }
