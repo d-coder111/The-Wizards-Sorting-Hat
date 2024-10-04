@@ -107,3 +107,5 @@ document.getElementById("generateSpellBtn").addEventListener("click", () => {
     spellTextElement.style.animation = "";
   }, 10); // Small delay to trigger reflow and restart animation
 });
+
+
