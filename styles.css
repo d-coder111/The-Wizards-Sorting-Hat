@@ -1,10 +1,20 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
     margin: 0;
     padding: 20px;
+    background-color: white;
+    color: black;
 }
 
+.dark-mode {
+    background-color: black;
+    color: white;
+    
+  }
+
+  .dark-mode .quizForm1{
+color: #42e695;
+  }
 .container {
     max-width: 600px;
     margin: 0 auto;

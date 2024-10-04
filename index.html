@@ -11,6 +11,7 @@
 <div class="image-container">
     <img src="https://imgs.search.brave.com/6Sffhw0RU1m6DlaxDyoDRRJrLVhXStCPmkCoCG_0A8Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5wcm9wcm9mcy5j/b20vaW1hZ2VzL1FN/L3VzZXJfaW1hZ2Vz/LzI1MDM4NTIvUG90/dGVybW9yZS1Ib3Vz/ZS1Tb3J0aW5nLUhh/dC0ud2VicA"
          alt="Hogwarts">
+<button onclick="myFunction()" type="submit" style="width: 20%;">Toggle dark mode</button>
 </div>
 <div class="spell-container">
     <div class="spell-internal-container">
@@ -27,7 +28,7 @@
     <h1>Which Hogwarts House Do You Belong To?</h1>
     <p>Answer the questions below to find out your house!</p>
 
-    <form id="quizForm">
+    <form id="quizForm" class="quizForm1">
         <div class="question">
             <h3>1. What do you value the most?</h3>
             <label><input type="radio" name="q1" value="Gryffindor"> Bravery</label>
@@ -113,21 +114,6 @@
             <label><input type="radio" name="q12" value="Slytherin"> Green</label>
         </div>
 
-        <div class="question">
-            <h3>13. What are the names of Ron Weasley’s twin brothers</h3>
-            <label><input type="radio" name="q1" value="Gryffindor"> Fred and George</label>
-            <label><input type="radio" name="q1" value="Ravenclaw"> Richard and Harris</label>
-            <label><input type="radio" name="q1" value="Hufflepuff"> Durmstrang and Beauxbatons</label>
-            <label><input type="radio" name="q1" value="Slytherin"> Cedric and  Diggory</label>
-        </div>
-
-        <div class="question">
-            <h3>14.What is Professor Remus Lupin's secret</h3>
-            <label><input type="radio" name="q1" value="Gryffindor"> He's a Robes</label>
-            <label><input type="radio" name="q1" value="Ravenclaw"> He's a werewolf</label>
-            <label><input type="radio" name="q1" value="Hufflepuff"> He's a Hagrid</label>
-            <label><input type="radio" name="q1" value="Slytherin"> He's a Narcissa </label>
-        </div>
         <button type="submit">Get Sorted!</button>
     </form>
 

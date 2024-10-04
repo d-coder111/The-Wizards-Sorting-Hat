@@ -85,6 +85,12 @@ function getSpellOfTheDay() {
   return spells[spellIndex];
 }
 
+function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  
+}
+
 // Helper function to get the current day of the year (1 - 365)
 function getDayOfYear(date) {
   const start = new Date(date.getFullYear(), 0, 0);
