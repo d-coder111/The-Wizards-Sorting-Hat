@@ -53,7 +53,7 @@ This Code of Conduct applies to all spaces managed by **The Wizards Sorting Hat*
 
 ## Reporting Violations
 
-If you experience or witness behavior that violates this Code of Conduct, please report it by contacting the project leaders at **email**. All complaints will be reviewed promptly and confidentially. The community leaders are committed to ensuring a safe and positive environment and will take appropriate action to address any issues.
+If you experience or witness behavior that violates this Code of Conduct, please report it by contacting the project leaders at **divy777888@gmail.com**. All complaints will be reviewed promptly and confidentially. The community leaders are committed to ensuring a safe and positive environment and will take appropriate action to address any issues.
 
 ## Consequences of Unacceptable Behavior
 
