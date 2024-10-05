@@ -3,24 +3,24 @@ body {
   background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
   margin: 0;
   padding: 20px;
+  
 }
 
 .container {
   max-width: 1918px;
   margin: -198px auto;
-  padding: 20px;
-  background-color: white;
+  padding: 20px;;
   border-radius: 10px;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.821);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   background: none;
-  z-index: 2;
+  z-index: 0;
 }
 
 h1 {
   text-align: center;
   font-size: 2.5em;
-  color: #8b0000;
+  color: #d9d504;
 }
 
 .question {
@@ -62,7 +62,7 @@ h1 {
 }
 
 .question:hover {
-  background-color: rgba(0, 0, 0, 0.173);
+  background-color: rgba(0, 0, 0, 0.318);
 }
 
 
@@ -82,36 +82,43 @@ video {
   width: 100%;
   opacity: 70%;
   height: auto;
+  filter: brightness(130%);
   object-fit: cover;
 }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 
 .questP {
   font-family: 'almendra-display-regular', serif;
-  font-size: 2.5rem;
-  margin: -1% 0.2%;
-  
+  font-size: 2rem;
+  margin: 1% 1%;
   color: rgb(64, 255, 0);
-  text-shadow: 0px 0px 5px black;
+  text-shadow: 0px 0px 2px black;
 }
 
 h3 {
-  font-family: 'playwrite-de-grund', serif;
-  font-size: 2.5rem;
+  font-family: 'medievalsharp-regular', serif;
+  font-size: 2rem;
   margin-top: auto;
 }
 
 .question {
+  font-family: 'libre-baskerville-bold', serif;
   font-weight: 600;
-  margin-top: 3%;
   color: white;
-  font-size: 20px;
 }
 
 label{
   font-family:'Gabriela',serif;
   font-size: 22px;
-  color: rgb(226, 226, 226);
+  color: yellow;
+  text-shadow: 0 0 3px black;
 }
+
+
 
 .overlay-text {
   position: absolute;
@@ -133,27 +140,76 @@ label{
     0 0 30px rgba(255, 255, 0, 0.4);
 }
 
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 223, 0, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 20px rgba(255, 223, 0, 1);
+  }
+}
+
 
 label {
   display: block;
+  background-color: #ff000017;
+  padding: 15px;
   margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+label:hover {
+  background-color: #ff0000a5;
+
+}
+label:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+input[type="radio"] {
+  background-color: #000000;
+
+}
+input[type="radio"]:checked + .overlay-text  {
+  background-color: #01afff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a slight animation effect when selected */
+input[type="radio"]:checked + .overlay-text   {
+  transform: scale(1.05);
 }
 
 button {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #8b0000;
-  color: white;
+  background-color: #6200ea  ;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  cursor: pointer;
   font-size: 1.2em;
-  transition: background-color 0.3s;
+  margin: 10px 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  background-color: #a52a2a;
+  background-color:#33dd08 ;
+    transform: translateY(-2px);
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 /*result card*/

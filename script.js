@@ -108,18 +108,51 @@ document.getElementById("generateSpellBtn").addEventListener("click", () => {
   }, 10); // Small delay to trigger reflow and restart animation
 });
 
-const quizFrm = document.getElementById('quizForm');
-const labels = document.querySelectorAll('label');
+// Function to handle the option selection
+function handleOptionSelection() {
+  const options = document.querySelectorAll('input[name="options"]');
 
-quizFrm.addEventListener('change', (e) => {
-  if (e.target.type === 'radio') {
-    // Find all radio buttons with the same name (i.e., within the same question)
-    const currentQuestion = document.querySelectorAll(`input[name="${e.target.name}"]`);
+  options.forEach(option => {
+    option.addEventListener('change', function() {
+      // Store the selected value
+      const selectedValue = option.value;
+      localStorage.setItem('selectedAnswer', selectedValue); // Store the selected value
+      console.log("Selected answer stored: " + selectedValue);
+      
+      // Change the background color of the selected option
+      options.forEach(opt => {
+        const label = opt.parentElement; // Reference to the label
+        if (opt.checked) {
+          label.classList.add('selected'); // Add class to selected label
+        } else {
+          label.classList.remove('selected'); // Remove class from unselected labels
+        }
+      });
+    });
+  });
+}
+
+// Function to load the stored answer (if it exists) when the page loads
+function loadStoredAnswer() {
+  const storedAnswer = localStorage.getItem('selectedAnswer');
+
+  if (storedAnswer) {
+    const optionToSelect = document.querySelector(`input[name="options"][value="${storedAnswer}"]`);
     
-    // Reset only the labels for this specific question to white
-    currentQuestion.forEach(input => input.parentElement.style.color = 'white');
-    
-    // Set the selected radio button's label to yellow
-    e.target.parentElement.style.color = 'yellow';
+    if (optionToSelect) {
+      optionToSelect.checked = true; // Check the stored option
+      const label = optionToSelect.parentElement; // Reference to the label
+      label.classList.add('selected'); // Set the class to green
+    }
   }
-});
+}
+
+// Call the function to set up event listeners
+handleOptionSelection();
+
+// Load the previously stored answer when the page loads
+window.onload = function() {
+  loadStoredAnswer();
+};
+
+
