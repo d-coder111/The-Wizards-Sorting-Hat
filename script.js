@@ -136,3 +136,14 @@ document.getElementById("generateSpellBtn").addEventListener("click", () => {
     spellTextElement.style.animation = "";
   }, 10); // Small delay to trigger reflow and restart animation
 });
+
+
+//after submitting the form
+
+const submitSound = document.querySelector('#submitSound');
+const quiz = document.getElementById("quizForm");
+
+quiz.addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitSound.play();
+});
