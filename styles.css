@@ -6,13 +6,14 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 1918px;
   margin: -198px auto;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.821);
   position: relative;
+  background: none;
   z-index: 2;
 }
 
@@ -61,8 +62,9 @@ h1 {
 }
 
 .question:hover {
-  background-color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.173);
 }
+
 
 .video-container {
   position: absolute;
@@ -71,41 +73,44 @@ h1 {
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: 100%;
-  /* Adjust the width as needed */
   height: 266px;
-  /* Adjust the height to fit the space you want */
   overflow: hidden;
-  /* Ensures the video doesn't exceed the container */
   z-index: 2;
-  /* Behind the form */
 }
 
 video {
   width: 100%;
-  opacity: 50%;
+  opacity: 70%;
   height: auto;
-  /* Cover the container's height */
   object-fit: cover;
-  /* Ensures the video covers the entire container */
 }
 
 .questP {
   font-family: 'almendra-display-regular', serif;
-  font-size: 1.5rem;
-  margin: 1% 2%;
-  color: red;
-  text-shadow: 0px 0px 2px black;
+  font-size: 2.5rem;
+  margin: -1% 0.2%;
+  
+  color: rgb(64, 255, 0);
+  text-shadow: 0px 0px 5px black;
 }
 
 h3 {
-  font-family: 'medievalsharp-regular', serif;
-  font-size: 1.2rem;
+  font-family: 'playwrite-de-grund', serif;
+  font-size: 2.5rem;
+  margin-top: auto;
 }
 
 .question {
-  font-family: 'libre-baskerville-bold', serif;
   font-weight: 600;
+  margin-top: 3%;
+  color: white;
+  font-size: 20px;
+}
 
+label{
+  font-family:'Gabriela',serif;
+  font-size: 22px;
+  color: rgb(226, 226, 226);
 }
 
 .overlay-text {
@@ -118,7 +123,6 @@ h3 {
   color: #fffae6;
   ;
   font-size: 53px;
-  /* Adjust size for better readability */
   font-weight: bold;
   text-align: center;
   text-shadow:

@@ -108,4 +108,18 @@ document.getElementById("generateSpellBtn").addEventListener("click", () => {
   }, 10); // Small delay to trigger reflow and restart animation
 });
 
+const quizFrm = document.getElementById('quizForm');
+const labels = document.querySelectorAll('label');
 
+quizFrm.addEventListener('change', (e) => {
+  if (e.target.type === 'radio') {
+    // Find all radio buttons with the same name (i.e., within the same question)
+    const currentQuestion = document.querySelectorAll(`input[name="${e.target.name}"]`);
+    
+    // Reset only the labels for this specific question to white
+    currentQuestion.forEach(input => input.parentElement.style.color = 'white');
+    
+    // Set the selected radio button's label to yellow
+    e.target.parentElement.style.color = 'yellow';
+  }
+});
