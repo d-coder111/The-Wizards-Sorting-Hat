@@ -32,17 +32,49 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
     housePoints[a] > housePoints[b] ? a : b
   );
 
-  // House descriptions
-  const houseDescriptions = {
-    Gryffindor:
-      "You have been sorted into Gryffindor, the house of the brave and daring! Known for their courage, Gryffindors are always ready to stand up for what is right, no matter the odds. With a bold heart and a fierce sense of justice, you are never afraid to take risks or face challenges head-on. Welcome to the house of heroes like Harry Potter, Hermione Granger, and Albus Dumbledore!",
-    Ravenclaw:
-      "Welcome to Ravenclaw, where wisdom and learning are prized above all! As a member of this house, you are valued for your intelligence, creativity, and curiosity. Ravenclaws are known for their sharp minds and thirst for knowledge, always seeking answers to life’s mysteries. You join the ranks of greats like Luna Lovegood and Cho Chang, where cleverness and ingenuity reign supreme!",
-    Hufflepuff:
-      "You’ve been sorted into Hufflepuff, the house of loyalty and kindness! Hufflepuffs are known for their strong sense of fairness, patience, and dedication. You are someone who values friendship, hard work, and the well-being of others. In Hufflepuff, every person matters, and unity is key. You stand alongside legends like Newt Scamander and Cedric Diggory, where inclusivity and perseverance define your strength!",
-    Slytherin:
-      "Welcome to Slytherin, where ambition and cunning pave the way to greatness! As a Slytherin, you are driven by your goals and never shy away from doing what it takes to succeed. Known for being resourceful and strategic, you can navigate challenges with ease and foresight. In Slytherin, you follow in the footsteps of powerhouses like Severus Snape and Merlin, with ambition as your guiding star!",
-  };
+// House descriptions with multiple options
+const houseDescriptions = {
+  Gryffindor: [
+    "You have been sorted into Gryffindor, the house of bravery and daring! Known for their courage, Gryffindors stand ready to fight for what is right, regardless of the odds. With bold hearts and a fierce sense of justice, you face challenges head-on.",
+    "Welcome to Gryffindor! You embody the spirit of bravery and valor, where each challenge is met with courage. Heroes like Harry Potter and Hermione Granger inspire you to fight for justice.",
+    "Congratulations! You've joined Gryffindor, where daring and bravery are celebrated. Here, you will find friendship among courageous souls ready to take on any adventure."
+  ],
+  
+  Ravenclaw: [
+    "Welcome to Ravenclaw, where wisdom and learning are cherished above all! As a member of this house, you are valued for your intelligence, creativity, and curiosity.",
+    "You are now part of Ravenclaw! Known for your sharp mind and love for knowledge, you will thrive in an environment that encourages inquiry and innovation.",
+    "Congratulations on being sorted into Ravenclaw! Here, your intelligence and creativity shine, and you will be surrounded by fellow thinkers and innovators."
+  ],
+  
+  Hufflepuff: [
+    "You’ve been sorted into Hufflepuff, the house of loyalty and kindness! Hufflepuffs are known for their strong sense of fairness, patience, and dedication.",
+    "Welcome to Hufflepuff, where hard work and loyalty are valued above all! You will find true friendship and support among your fellow Hufflepuffs.",
+    "Congratulations! You've joined Hufflepuff, where kindness and inclusivity create a warm and welcoming environment for all."
+  ],
+  
+  Slytherin: [
+    "Welcome to Slytherin, where ambition and cunning pave the way to greatness! As a Slytherin, you are driven by your goals and never shy away from doing what it takes to succeed.",
+    "You've been sorted into Slytherin! Here, your resourcefulness and ambition will help you navigate challenges with ease and strategy.",
+    "Congratulations on being sorted into Slytherin! This house is known for its determination and cleverness, traits that will guide you to success."
+  ],
+};
+
+
+// Function to get a random description for the assigned house
+function getRandomDescription(house) {
+  const descriptions = houseDescriptions[house];
+  const randomIndex = Math.floor(Math.random() * descriptions.length);
+  return descriptions[randomIndex];
+}
+
+// Display result
+const resultDiv = document.getElementById("result");
+const attemptedQuestionsMessage = `You attempted ${attemptedQuestions} questions.`;
+const randomHouseDescription = getRandomDescription(assignedHouse);
+resultDiv.innerHTML = `${attemptedQuestionsMessage}<br>🎉 You belong to <strong>${assignedHouse}</strong>!<br>${randomHouseDescription}`;
+
+
+
 
   // House images
   const houseImages = {
@@ -56,9 +88,6 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
       "https://i.pinimg.com/564x/c1/4f/36/c14f36dea82449f6ee5af5c2a6007c66.jpg",
   };
 
-  // Display result
-  const resultDiv = document.getElementById("result");
-  resultDiv.innerHTML = `🎉 You belong to <strong>${assignedHouse}</strong>!<br>${houseDescriptions[assignedHouse]}`;
 
   // Display the house image
   const houseImage = document.getElementById("houseImage");
