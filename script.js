@@ -148,50 +148,208 @@ function loadStoredAnswer() {
 }
 
 
-// THEME Options
-// Object containing styles for different themes (Hogwarts houses)
+// Theme styles object using CSS-like naming conventions
 const themeStyles = {
   default: {
-      backgroundColor: 'white', // Default background color
-      color: 'black',           // Default text color
+    // The default theme will be handled separately
   },
   gryffindor: {
-      backgroundColor: '#740001', // Gryffindor's dark red color
-      color: '#D3A625',           // Gryffindor's gold color
+    'background': 'linear-gradient(135deg, #740001 0%, #ae0001 100%)',
+    'color': '#ffc500',
+    'question-background': 'rgba(174, 0, 1, 0.7)',
+    'button-background': '#ffc500',
+    'button-color': '#740001',
+    'question-border': '2px solid #ffc500',
+    'text-shadow': '1px 1px 2px #000'
   },
   ravenclaw: {
-      backgroundColor: '#0E1A40', // Ravenclaw's navy blue color
-      color: '#946B2D',           // Ravenclaw's bronze color
+    'background': 'linear-gradient(135deg, #0e1a40 0%, #222f5b 100%)',
+    'color': '#946b2d',
+    'question-background': 'rgba(34, 47, 91, 0.7)',
+    'button-background': '#946b2d',
+    'button-color': '#0e1a40',
+    'question-border': '2px solid #946b2d',
+    'text-shadow': '1px 1px 2px #000'
   },
   hufflepuff: {
-      backgroundColor: '#ECB939', // Hufflepuff's yellow color
-      color: '#000000',           // Hufflepuff's black color
+    'background': 'linear-gradient(135deg, #ecb939 0%, #f0c75e 100%)',
+    'color': '#372e29',
+    'question-background': 'rgba(240, 199, 94, 0.7)',
+    'button-background': '#372e29',
+    'button-color': '#ecb939',
+    'question-border': '2px solid #60605c',
+    'text-shadow': '1px 1px 2px #fff'
   },
   slytherin: {
-      backgroundColor: '#1A472A', // Slytherin's dark green color
-      color: '#AAAAAA',           // Slytherin's silver/gray color
-  },
+    'background': 'linear-gradient(135deg, #1a472a 0%, #2a623d 100%)',
+    'color': '#aaaaaa',
+    'question-background': 'rgba(42, 98, 61, 0.7)',
+    'button-background': '#aaaaaa',
+    'button-color': '#1a472a',
+    'question-border': '2px solid #aaaaaa',
+    'text-shadow': '1px 1px 2px #000'
+  }
 };
 
-// Grabbing HTML elements by their ID
-const container = document.getElementById('quiz-container');
-const themeButtons = document.querySelectorAll('.theme-button'); // All theme buttons
+// Function to apply theme
+function applyTheme(themeName) {
+  const container = document.getElementById('quiz-container');
+  const questions = container.querySelectorAll('.question');
+  const buttons = container.querySelectorAll('button');
+  const labels = container.querySelectorAll('label');
 
-// Event listener for each theme button to apply the corresponding theme
-themeButtons.forEach(button => {
+  if (themeName === 'default') {
+    // Reset to original CSS styles
+    document.body.style.cssText = `
+      font-family: "Arial", sans-serif;
+      background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
+      margin: 0;
+      padding: 20px;
+    `;
+    
+    container.style.cssText = `
+      max-width: 1918px;
+      margin: -198px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      background: none;
+      z-index: 0;
+      transition: all 0.3s ease;
+    `;
+
+    questions.forEach(question => {
+      question.style.cssText = `
+        font-family: 'libre-baskerville-bold', serif;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+      `;
+    });
+
+    buttons.forEach(button => {
+      button.style.cssText = `
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #6200ea;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2em;
+        margin: 10px 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      `;
+    });
+
+    labels.forEach(label => {
+      label.style.cssText = `
+        font-family: 'Gabriela', serif;
+        font-size: 22px;
+        color: yellow;
+        text-shadow: 0 0 3px black;
+        display: block;
+        background-color: #ff000017;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      `;
+    });
+  } else {
+    const theme = themeStyles[themeName];
+    document.body.style.background = theme['background'];
+    container.style.color = theme['color'];
+    container.style.textShadow = theme['text-shadow'];
+
+    questions.forEach(question => {
+      question.style.backgroundColor = theme['question-background'];
+      question.style.border = theme['question-border'];
+    });
+
+    buttons.forEach(button => {
+      button.style.backgroundColor = theme['button-background'];
+      button.style.color = theme['button-color'];
+    });
+
+    labels.forEach(label => {
+      label.style.backgroundColor = theme['question-background'];
+      label.style.color = theme['color'];
+      label.style.border = theme['question-border'];
+    });
+  }
+
+  // Add some Harry Potter-inspired decorative elements
+  addDecorativeElements(themeName);
+
+  // Save the current theme to localStorage
+  localStorage.setItem('selectedTheme', themeName);
+}
+
+// Function to add decorative elements based on the theme
+function addDecorativeElements(themeName) {
+  let decorElement = document.getElementById('theme-decor');
+  if (!decorElement) {
+    decorElement = document.createElement('div');
+    decorElement.id = 'theme-decor';
+    document.body.appendChild(decorElement);
+  }
+
+  switch(themeName) {
+    case 'gryffindor':
+      decorElement.innerHTML = '🦁';
+      break;
+    case 'ravenclaw':
+      decorElement.innerHTML = '🦅';
+      break;
+    case 'hufflepuff':
+      decorElement.innerHTML = '🦡';
+      break;
+    case 'slytherin':
+      decorElement.innerHTML = '🐍';
+      break;
+    default:
+      decorElement.innerHTML = '⚡';
+  }
+
+  decorElement.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    z-index: 1000;
+  `;
+}
+
+// Event listener for theme buttons
+document.querySelectorAll('.theme-button').forEach(button => {
   button.addEventListener('click', () => {
-      const theme = button.getAttribute('data-theme'); // Get the theme name from data attribute
-      applyTheme(theme); // Apply the selected theme
+    const theme = button.getAttribute('data-theme');
+    applyTheme(theme);
   });
 });
 
-// Function to apply the theme by changing background and text colors
-function applyTheme(theme) {
-  const styles = themeStyles[theme]; // Get styles based on the theme name
-  container.style.backgroundColor = styles.backgroundColor; // Set background color
-  container.style.color = styles.color; // Set text color
+// Function to apply the saved theme or default on page load
+function applySavedTheme() {
+  const savedTheme = localStorage.getItem('selectedTheme');
+  if (savedTheme && themeStyles.hasOwnProperty(savedTheme)) {
+    applyTheme(savedTheme);
+  } else {
+    applyTheme('default');
+  }
 }
 
+// Apply saved theme on page load
+document.addEventListener('DOMContentLoaded', applySavedTheme);
 
 // Call the function to set up event listeners
 handleOptionSelection();
