@@ -147,6 +147,52 @@ function loadStoredAnswer() {
   }
 }
 
+
+// THEME Options
+// Object containing styles for different themes (Hogwarts houses)
+const themeStyles = {
+  default: {
+      backgroundColor: 'white', // Default background color
+      color: 'black',           // Default text color
+  },
+  gryffindor: {
+      backgroundColor: '#740001', // Gryffindor's dark red color
+      color: '#D3A625',           // Gryffindor's gold color
+  },
+  ravenclaw: {
+      backgroundColor: '#0E1A40', // Ravenclaw's navy blue color
+      color: '#946B2D',           // Ravenclaw's bronze color
+  },
+  hufflepuff: {
+      backgroundColor: '#ECB939', // Hufflepuff's yellow color
+      color: '#000000',           // Hufflepuff's black color
+  },
+  slytherin: {
+      backgroundColor: '#1A472A', // Slytherin's dark green color
+      color: '#AAAAAA',           // Slytherin's silver/gray color
+  },
+};
+
+// Grabbing HTML elements by their ID
+const container = document.getElementById('quiz-container');
+const themeButtons = document.querySelectorAll('.theme-button'); // All theme buttons
+
+// Event listener for each theme button to apply the corresponding theme
+themeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+      const theme = button.getAttribute('data-theme'); // Get the theme name from data attribute
+      applyTheme(theme); // Apply the selected theme
+  });
+});
+
+// Function to apply the theme by changing background and text colors
+function applyTheme(theme) {
+  const styles = themeStyles[theme]; // Get styles based on the theme name
+  container.style.backgroundColor = styles.backgroundColor; // Set background color
+  container.style.color = styles.color; // Set text color
+}
+
+
 // Call the function to set up event listeners
 handleOptionSelection();
 

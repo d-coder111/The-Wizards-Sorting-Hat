@@ -15,20 +15,60 @@ body {
   position: relative;
   background: none;
   z-index: 0;
-}
-
-h1 {
-  text-align: center;
-  font-size: 2.5em;
-  color: #d9d504;
+  transition: all 0.3s ease;
 }
 
 .question {
+  font-family: 'libre-baskerville-bold', serif;
+  font-weight: 600;
+  color: white;
   margin-bottom: 20px;
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
   transition: background-color 0.3s;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #6200ea  ;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin: 10px 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  gap: 15px;
+  font-size: 14px;
+  
+}
+
+@media (max-width: 600px) {
+  .theme-buttons {
+      flex-wrap: wrap;
+  }
+}
+.theme-buttons .theme-button {
+  padding: 7px;
+  text-align: center;
+}
+
+/* End THEME Options*/
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #d9d504;
 }
 
 @keyframes lightSweep {
@@ -65,7 +105,6 @@ h1 {
   background-color: rgba(0, 0, 0, 0.318);
 }
 
-
 .video-container {
   position: absolute;
   top: 0;
@@ -85,11 +124,11 @@ video {
   filter: brightness(130%);
   object-fit: cover;
 }
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
 
 .questP {
   font-family: 'almendra-display-regular', serif;
@@ -105,20 +144,12 @@ h3 {
   margin-top: auto;
 }
 
-.question {
-  font-family: 'libre-baskerville-bold', serif;
-  font-weight: 600;
-  color: white;
-}
-
 label{
   font-family:'Gabriela',serif;
   font-size: 22px;
   color: yellow;
   text-shadow: 0 0 3px black;
 }
-
-
 
 .overlay-text {
   position: absolute;
@@ -185,22 +216,6 @@ input[type="radio"]:checked + .overlay-text  {
 /* Add a slight animation effect when selected */
 input[type="radio"]:checked + .overlay-text   {
   transform: scale(1.05);
-}
-
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #6200ea  ;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  cursor: pointer;
-  font-size: 1.2em;
-  margin: 10px 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
