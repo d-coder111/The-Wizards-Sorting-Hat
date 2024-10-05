@@ -109,3 +109,13 @@ document.getElementById("generateSpellBtn").addEventListener("click", () => {
 });
 
 
+//after submitting the form
+
+const submitSound = document.querySelector('#submitSound');
+const quiz = document.getElementById("quizForm");
+
+quiz.addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitSound.play();
+});
+
