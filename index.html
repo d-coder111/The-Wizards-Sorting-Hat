@@ -45,9 +45,16 @@
         alt="houses"
       />
     </div>
-    <div class="container">
+    <div class="container" id="quiz-container">
       <p class="questP">Answer the questions below to find out your house!</p>
-
+      
+      <div class="theme-buttons">
+          <button class="theme-button" data-theme="default">Default</button>
+          <button class="theme-button" data-theme="gryffindor">Gryffindor</button>
+          <button class="theme-button" data-theme="ravenclaw">Ravenclaw</button>
+          <button class="theme-button" data-theme="hufflepuff">Hufflepuff</button>
+          <button class="theme-button" data-theme="slytherin">Slytherin</button>
+      </div>
       <form id="quizForm">
         <div class="question">
           <h3>1. What do you value the most?</h3>
@@ -264,6 +271,7 @@
 
       <div id="result" class="result"></div>
       <img id="houseImage" src="" alt="" style="display: none" />
+    
     </div>
 
     <script src="script.js"></script>

@@ -108,4 +108,95 @@ document.getElementById("generateSpellBtn").addEventListener("click", () => {
   }, 10); // Small delay to trigger reflow and restart animation
 });
 
+// THEME Options
 
+// Object containing styles for different themes (Hogwarts houses)
+const themeStyles = {
+  default: {
+      backgroundColor: 'white', // Default background color
+      color: 'black',           // Default text color
+  },
+  gryffindor: {
+      backgroundColor: '#740001', // Gryffindor's dark red color
+      color: '#D3A625',           // Gryffindor's gold color
+  },
+  ravenclaw: {
+      backgroundColor: '#0E1A40', // Ravenclaw's navy blue color
+      color: '#946B2D',           // Ravenclaw's bronze color
+  },
+  hufflepuff: {
+      backgroundColor: '#ECB939', // Hufflepuff's yellow color
+      color: '#000000',           // Hufflepuff's black color
+  },
+  slytherin: {
+      backgroundColor: '#1A472A', // Slytherin's dark green color
+      color: '#AAAAAA',           // Slytherin's silver/gray color
+  },
+};
+
+// Grabbing HTML elements by their ID
+const container = document.getElementById('quiz-container');
+const themeButtons = document.querySelectorAll('.theme-button'); // All theme buttons
+const form = document.getElementById('quizForm');
+const resultDiv = document.getElementById('result'); // Div to display result text
+const houseImage = document.getElementById('houseImage'); // Image element to display the house crest
+
+// Event listener for each theme button to apply the corresponding theme
+themeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+      const theme = button.getAttribute('data-theme'); // Get the theme name from data attribute
+      applyTheme(theme); // Apply the selected theme
+  });
+});
+
+// Function to apply the theme by changing background and text colors
+function applyTheme(theme) {
+  const styles = themeStyles[theme]; // Get styles based on the theme name
+  container.style.backgroundColor = styles.backgroundColor; // Set background color
+  container.style.color = styles.color; // Set text color
+}
+
+// Event listener for form submission
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent form from refreshing the page
+  const formData = new FormData(form); // Get form data
+  const answers = {};
+  for (let [name, value] of formData) {
+      answers[name] = value; // Store form answers
+  }
+  const result = determineHouse(answers); // Determine the house based on answers
+  resultDiv.textContent = `You belong to ${result}!`; // Display the result
+  displayHouseImage(result); // Display the house crest
+});
+
+// Function to determine which house the user belongs to based on their answers
+function determineHouse(answers) {
+  const houseCounts = {
+      Gryffindor: 0,
+      Ravenclaw: 0,
+      Hufflepuff: 0,
+      Slytherin: 0
+  };
+
+  // Count how many answers match each house
+  for (let answer of Object.values(answers)) {
+      houseCounts[answer]++;
+  }
+
+  // Return the house with the highest count
+  return Object.keys(houseCounts).reduce((a, b) => houseCounts[a] > houseCounts[b] ? a : b);
+}
+
+// Function to display the appropriate house crest based on the result
+function displayHouseImage(house) {
+  const imagePaths = {
+      Gryffindor: 'path/to/gryffindor.jpg',
+      Ravenclaw: 'path/to/ravenclaw.jpg',
+      Hufflepuff: 'path/to/hufflepuff.jpg',
+      Slytherin: 'path/to/slytherin.jpg'
+  };
+
+  houseImage.src = imagePaths[house]; // Set the image source to the selected house's crest
+  houseImage.alt = `${house} crest`; // Set alt text for the image
+  houseImage.style.display = 'block'; // Make the image visible
+}

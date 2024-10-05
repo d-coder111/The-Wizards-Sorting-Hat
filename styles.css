@@ -5,16 +5,62 @@ body {
   padding: 20px;
 }
 
+/*THEME Options*/
+
 .container {
   max-width: 600px;
-  margin: -198px auto;
+  margin: 0 auto;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
+  transition: all 0.3s ease;
 }
+.question {
+  font-family: 'libre-baskerville-bold', serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #a52a2a;
+}
+.theme-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  gap: 15px;
+  font-size: 14px;
+  
+}
+@media (max-width: 600px) {
+  .theme-buttons {
+      flex-wrap: wrap;
+  }
+}
+.theme-buttons .theme-button {
+  padding: 7px;
+  text-align: center;
+}
+
+/* End THEME Options*/
 
 h1 {
   text-align: center;
@@ -102,11 +148,7 @@ h3 {
   font-size: 1.2rem;
 }
 
-.question {
-  font-family: 'libre-baskerville-bold', serif;
-  font-weight: 600;
 
-}
 
 .overlay-text {
   position: absolute;
@@ -339,3 +381,7 @@ button:hover {
     display: none;
   }
 }
+
+
+
+
