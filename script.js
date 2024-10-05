@@ -109,7 +109,6 @@ document.getElementById("generateSpellBtn").addEventListener("click", () => {
 });
 
 // THEME Options
-
 // Object containing styles for different themes (Hogwarts houses)
 const themeStyles = {
   default: {
@@ -137,9 +136,6 @@ const themeStyles = {
 // Grabbing HTML elements by their ID
 const container = document.getElementById('quiz-container');
 const themeButtons = document.querySelectorAll('.theme-button'); // All theme buttons
-const form = document.getElementById('quizForm');
-const resultDiv = document.getElementById('result'); // Div to display result text
-const houseImage = document.getElementById('houseImage'); // Image element to display the house crest
 
 // Event listener for each theme button to apply the corresponding theme
 themeButtons.forEach(button => {
@@ -156,47 +152,8 @@ function applyTheme(theme) {
   container.style.color = styles.color; // Set text color
 }
 
-// Event listener for form submission
-form.addEventListener('submit', (e) => {
-  e.preventDefault(); // Prevent form from refreshing the page
-  const formData = new FormData(form); // Get form data
-  const answers = {};
-  for (let [name, value] of formData) {
-      answers[name] = value; // Store form answers
-  }
-  const result = determineHouse(answers); // Determine the house based on answers
-  resultDiv.textContent = `You belong to ${result}!`; // Display the result
-  displayHouseImage(result); // Display the house crest
-});
 
-// Function to determine which house the user belongs to based on their answers
-function determineHouse(answers) {
-  const houseCounts = {
-      Gryffindor: 0,
-      Ravenclaw: 0,
-      Hufflepuff: 0,
-      Slytherin: 0
-  };
 
-  // Count how many answers match each house
-  for (let answer of Object.values(answers)) {
-      houseCounts[answer]++;
-  }
 
-  // Return the house with the highest count
-  return Object.keys(houseCounts).reduce((a, b) => houseCounts[a] > houseCounts[b] ? a : b);
-}
 
-// Function to display the appropriate house crest based on the result
-function displayHouseImage(house) {
-  const imagePaths = {
-      Gryffindor: 'path/to/gryffindor.jpg',
-      Ravenclaw: 'path/to/ravenclaw.jpg',
-      Hufflepuff: 'path/to/hufflepuff.jpg',
-      Slytherin: 'path/to/slytherin.jpg'
-  };
 
-  houseImage.src = imagePaths[house]; // Set the image source to the selected house's crest
-  houseImage.alt = `${house} crest`; // Set alt text for the image
-  houseImage.style.display = 'block'; // Make the image visible
-}

@@ -68,13 +68,7 @@ h1 {
   color: #8b0000;
 }
 
-.question {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
+
 
 @keyframes lightSweep {
   0% {
@@ -188,10 +182,6 @@ button {
   cursor: pointer;
   font-size: 1.2em;
   transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #a52a2a;
 }
 
 /*result card*/
@@ -375,7 +365,6 @@ button:hover {
 
 
 @media (max-width: 768px) {
-
   .logo-img,
   .houses-img {
     display: none;
