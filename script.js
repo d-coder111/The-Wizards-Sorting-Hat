@@ -147,3 +147,4 @@ quiz.addEventListener('submit', function (event) {
     event.preventDefault();
     submitSound.play();
 });
+

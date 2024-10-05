@@ -1,229 +1,341 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
-    margin: 0;
-    padding: 20px;
+  font-family: "Arial", sans-serif;
+  background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
+  margin: 0;
+  padding: 20px;
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: -198px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #8B0000;
+  text-align: center;
+  font-size: 2.5em;
+  color: #8b0000;
 }
 
 .question {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: background-color 0.3s;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+@keyframes lightSweep {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.light-sweep {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.05));
+  background-size: 200%;
+  animation: lightSweep 4s infinite;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .question:hover {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  /* Adjust the width as needed */
+  height: 266px;
+  /* Adjust the height to fit the space you want */
+  overflow: hidden;
+  /* Ensures the video doesn't exceed the container */
+  z-index: 2;
+  /* Behind the form */
+}
+
+video {
+  width: 100%;
+  opacity: 50%;
+  height: auto;
+  /* Cover the container's height */
+  object-fit: cover;
+  /* Ensures the video covers the entire container */
+}
+
+.questP {
+  font-family: 'almendra-display-regular', serif;
+  font-size: 1.5rem;
+  margin: 1% 2%;
+  color: red;
+  text-shadow: 0px 0px 2px black;
+}
+
+h3 {
+  font-family: 'medievalsharp-regular', serif;
+  font-size: 1.2rem;
+}
+
+.question {
+  font-family: 'libre-baskerville-bold', serif;
+  font-weight: 600;
+
+}
+
+.overlay-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-family: 'Cinzel Decorative', serif;
+  color: #fffae6;
+  ;
+  font-size: 53px;
+  /* Adjust size for better readability */
+  font-weight: bold;
+  text-align: center;
+  text-shadow:
+    0 0 10px rgba(255, 255, 0, 0.8),
+    /* Soft yellow glow */
+    0 0 20px rgba(255, 255, 0, 0.6),
+    /* Bright yellow glow */
+    0 0 30px rgba(255, 255, 0, 0.4);
+}
+
+
 label {
-    display: block;
-    margin: 10px 0;
+  display: block;
+  margin: 10px 0;
 }
 
 button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #8B0000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: background-color 0.3s;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #a52a2a;
+  background-color: #a52a2a;
 }
 
 /*result card*/
 .result {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 1.8em;
-    padding: 30px;
-    border: 3px solid #8b4513;
-    border-radius: 15px;
-    background: radial-gradient(circle, #3b3b3b 0%, #1a1a1a 100%);
-    color: #f4f4f4;
-    box-shadow: 0 0 20px rgba(255, 223, 0, 0.7), 0 0 40px rgba(255, 223, 0, 0.5);
-    position: relative;
-    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.8em;
+  padding: 30px;
+  border: 3px solid #8b4513;
+  border-radius: 15px;
+  background: radial-gradient(circle, #3b3b3b 0%, #1a1a1a 100%);
+  color: #f4f4f4;
+  box-shadow: 0 0 20px rgba(255, 223, 0, 0.7), 0 0 40px rgba(255, 223, 0, 0.5);
+  position: relative;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
 .result:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 223, 0, 1), 0 0 60px rgba(255, 223, 0, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 223, 0, 1), 0 0 60px rgba(255, 223, 0, 0.8);
 }
 
-.result::before, .result::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #f4f4f4;
-    border-radius: 50%;
-    animation: glow 2s infinite alternate;
+.result::before,
+.result::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  animation: glow 2s infinite alternate;
 }
 
 .result::before {
-    top: 10px;
-    left: 10px;
+  top: 10px;
+  left: 10px;
 }
 
 .result::after {
-    bottom: 10px;
-    right: 10px;
+  bottom: 10px;
+  right: 10px;
 }
 
 @keyframes glow {
-    0% {
-        box-shadow: 0 0 10px rgba(255, 223, 0, 0.5);
-    }
+  0% {
+    box-shadow: 0 0 10px rgba(255, 223, 0, 0.5);
+  }
 
-    100% {
-        box-shadow: 0 0 20px rgba(255, 223, 0, 1);
-    }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 223, 0, 1);
+  }
 }
 
 /*end of result card*/
 
 #houseImage {
-    display: block;
-    margin: 20px auto;
-    width: 100px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  display: block;
+  margin: 20px auto;
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .spell-container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 262px 0px;
+}
+
+.logo-img {
+  width: 33%;
+  border-radius: 10px;
+}
+
+.houses-img {
+  width: 33%;
+  border-radius: 10px;
 }
 
 .spell-internal-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #generateSpellBtn {
-    background-color: #1f1f1f;
-    color: white;
-    padding: 15px 32px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: color 0.4s ease-out, transform 0.4s ease-out;
+  background-color: #1f1f1f;
+  color: white;
+  padding: 15px 32px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease-out, transform 0.4s ease-out;
 }
 
 #generateSpellBtn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, #170a2c, #00c8ff54, #6200ea5d);
-    z-index: -1;
-    transition: transform 0.4s ease-out;
-    transform: scaleX(0);
-    transform-origin: left;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #170a2c, #00c8ff54, #6200ea5d);
+  z-index: -1;
+  transition: transform 0.4s ease-out;
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 #generateSpellBtn:hover::before {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 #generateSpellBtn:hover {
-    color: #f7f7f7;
-    transform: scale(1.05);
-    /* Adds scaling on hover */
+  color: #f7f7f7;
+  transform: scale(1.05);
+  /* Adds scaling on hover */
 }
 
 .spell-box {
-    margin-top: 30px;
-    font-size: 32px;
-    height: 50px;
-    background-color: black;
-    border-radius: 12px;
-    padding: 10px 20px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 0 8px 3px rgba(235, 124, 20, 0.6);
+  margin-top: 30px;
+  font-size: 32px;
+  height: 50px;
+  background-color: black;
+  border-radius: 12px;
+  padding: 10px 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 8px 3px rgba(235, 124, 20, 0.6);
 
-
-    transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
 }
 
 .spell-text {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: inline-block;
-    border-right: 2px solid white;
-    white-space: nowrap;
-    overflow: hidden;
-    letter-spacing: 2px;
-    font-weight: 600;
-    background: linear-gradient(90deg, #fa9a1c, #7873f5, #42e695);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: writeText 2s steps(30, end), blinkCaret 0.75s step-end infinite;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  display: inline-block;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 2px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #fa9a1c, #7873f5, #42e695);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: writeText 2s steps(30, end), blinkCaret 0.75s step-end infinite;
 }
 
 @keyframes writeText {
-    from {
-        width: 0;
-    }
+  from {
+    width: 0;
+  }
 
-    to {
-        width: 100%;
-    }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blinkCaret {
-    from, to {
-        border-color: transparent;
-    }
 
-    50% {
-        border-color: transparent;
-    }
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .logo-img,
+  .houses-img {
+    display: none;
+  }
 }
