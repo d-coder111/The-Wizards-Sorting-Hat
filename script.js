@@ -113,9 +113,19 @@ document.getElementById("generateSpellBtn").addEventListener("click", () => {
 
 const submitSound = document.querySelector('#submitSound');
 const quiz = document.getElementById("quizForm");
+const backgroundSound = document.querySelector("#backgroundSound");
+
 
 quiz.addEventListener('submit', function (event) {
     event.preventDefault();
     submitSound.play();
 });
+
+
+document.getElementById("generateSpellBtn").addEventListener("click", () => {
+  event.preventDefault();
+  backgroundSound.play();
+  backgroundSound.loop();
+});
+
 
