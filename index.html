@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Cinzel+Decorative:wght@400;700;900&family=Gloock&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=MedievalSharp&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Playwrite+DE+Grund:wght@100..400&display=swap&family=Gabriela&display=swap&family=Special+Elite&display=swap&family=Playwrite+DE+Grund:wght@100..400&family=Vesper+Libre:wght@400;500;700;900&display=swap&family=Cinzel+Decorative:wght@400;700;900&family=Gloock&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=MedievalSharp&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -48,9 +48,15 @@
         alt="houses"
       />
     </div>
-    <div class="container">
+    <div class="container" id="quiz-container">
       <p class="questP">Answer the questions below to find out your house!</p>
-
+      <div class="theme-buttons">
+        <button class="theme-button" data-theme="default">Default</button>
+        <button class="theme-button" data-theme="gryffindor">Gryffindor</button>
+        <button class="theme-button" data-theme="ravenclaw">Ravenclaw</button>
+        <button class="theme-button" data-theme="hufflepuff">Hufflepuff</button>
+        <button class="theme-button" data-theme="slytherin">Slytherin</button>
+    </div>
       <form id="quizForm">
         <div class="question">
           <h3>1. What do you value the most?</h3>
@@ -264,7 +270,6 @@
         </div>
         <button type="submit">Get Sorted!</button>
       </form>
-
       <div id="result" class="result"></div>
       <img id="houseImage" src="" alt="" style="display: none" />
     </div>
