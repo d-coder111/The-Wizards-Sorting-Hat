@@ -75,6 +75,7 @@ const spells = [
   "Stupefy",
   "Wingardium Leviosa",
   "Alohomora",
+  "Lumos",
 ];
 
 function getSpellOfTheDay() {
