@@ -7,7 +7,7 @@ body {
 .container {
   max-width: 1918px;
   margin: -198px auto;
-  padding: 20px;;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -16,6 +16,7 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Quiz Question styling  */
 .question {
   font-family: 'libre-baskerville-bold', serif;
   font-weight: 600;
@@ -24,14 +25,50 @@ body {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  transition: background-color 0.3s;
 }
 
+.question:hover {
+  background-color: rgba(0, 0, 0, 0.318);
+}
+
+.question input[type="radio"] {
+  display: none;
+}
+
+.question label {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-family: 'Gabriela', serif;
+  font-size: 22px;
+  color: yellow;
+  text-shadow: 0 0 3px black;
+}
+
+.question label:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.question input[type="radio"]:checked+label {
+  background: linear-gradient(135deg, #006400, #ADFF2F);
+  color: white;
+  border: 2px solid rgba(255, 0, 0, 0.9);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+
+/* Buttons */
 button {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #6200ea  ;
+  background-color: #6200ea;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -48,21 +85,20 @@ button {
   margin-bottom: 18px;
   gap: 15px;
   font-size: 14px;
-  
 }
 
 @media (max-width: 600px) {
   .theme-buttons {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
+
 .theme-buttons .theme-button {
   padding: 7px;
   text-align: center;
 }
 
 /* End THEME Options*/
-
 h1 {
   text-align: center;
   font-size: 2.5em;
@@ -124,8 +160,13 @@ video {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .questP {
@@ -142,8 +183,8 @@ h3 {
   margin-top: auto;
 }
 
-label{
-  font-family:'Gabriela',serif;
+label {
+  font-family: 'Gabriela', serif;
   font-size: 22px;
   color: yellow;
   text-shadow: 0 0 3px black;
@@ -157,69 +198,20 @@ label{
   z-index: 2;
   font-family: 'Cinzel Decorative', serif;
   color: #fffae6;
-  ;
   font-size: 53px;
   font-weight: bold;
   text-align: center;
   text-shadow:
     0 0 10px rgba(255, 255, 0, 0.8),
-    /* Soft yellow glow */
     0 0 20px rgba(255, 255, 0, 0.6),
-    /* Bright yellow glow */
     0 0 30px rgba(255, 255, 0, 0.4);
 }
 
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px rgba(255, 223, 0, 0.5);
-  }
-
-  100% {
-    box-shadow: 0 0 20px rgba(255, 223, 0, 1);
-  }
-}
-
-
-label {
-  display: block;
-  background-color: #ff000017;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-
-}
-label:hover {
-  background-color: #ff0000a5;
-
-}
-label:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-input[type="radio"] {
-  background-color: #000000;
-
-}
-input[type="radio"]:checked + .overlay-text  {
-  background-color: #01afff;
-  color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Add a slight animation effect when selected */
-input[type="radio"]:checked + .overlay-text   {
-  transform: scale(1.05);
-}
-
 button:hover {
-  background-color:#33dd08 ;
-    transform: translateY(-2px);
+  background-color: #33dd08;
+  transform: translateY(-2px);
 }
+
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
@@ -407,8 +399,10 @@ button:disabled {
 
 /* --------- Footer section ----------- */
 .footer {
-  background-color: hsla(20, 100%, 2%, 0.984); /* Dark color to match the Hogwarts theme */
-  color: burlywood; /* Light text color */
+  background-color: hsla(20, 100%, 2%, 0.984);
+  /* Dark color to match the Hogwarts theme */
+  color: burlywood;
+  /* Light text color */
   text-align: center;
   padding: 30px;
   position: relative;
@@ -426,7 +420,7 @@ button:disabled {
   justify-content: space-evenly;
 }
 
-.footer .footer-top .img-icon{
+.footer .footer-top .img-icon {
   width: 310px;
   height: 250px;
   background-image: url(assests/images/sorting-hat.png);
@@ -434,12 +428,12 @@ button:disabled {
   background-position: center;
   overflow: hidden;
   display: flex;
-  align-items: center; 
-  justify-content: center; 
-  margin: 0 auto; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.footer .footer-top p{
+.footer .footer-top p {
   font-size: 20px;
   margin-bottom: 15px;
 }
@@ -452,47 +446,53 @@ button:disabled {
 
 .footer .footer-top .links a {
   display: inline-block;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
-.footer .footer-top .social-links a{
+.footer .footer-top .social-links a {
   margin: 0 10px;
 }
 
-.footer .footer-top .social-links{
+.footer .footer-top .social-links {
   margin-bottom: 15px;
 }
 
-.footer .footer-top .btn{
+.footer .footer-top .btn {
   max-width: 120px;
   font-size: 16px;
   font-weight: bold;
   color: #1b0e08;
   background-color: burlywood;
   margin-top: 15px;
-} 
-
-.footer a:hover {
-  color: #f39c12; /* A highlight color for hover */
 }
 
-.footer .btn:hover{
+.footer a:hover {
+  color: #f39c12;
+  /* A highlight color for hover */
+}
+
+.footer .btn:hover {
   background-color: #f39c12;
 }
 
-.footer i{
+.footer i {
   font-size: 20px;
 }
 
 .footer .footer-top .newsletter input[type="email"] {
   width: 100%;
-  max-width: 300px; /* Maximum width for larger screens */
+  max-width: 300px;
+  /* Maximum width for larger screens */
   padding: 10px;
   font-size: 16px;
-  color: #1b0e08; /* Dark text color */
-  background-color: #f4f4f4; /* Light background color */
-  border: 2px solid burlywood; /* Match with the footer theme */
-  border-radius: 5px; /* Rounded edges */
+  color: #1b0e08;
+  /* Dark text color */
+  background-color: #f4f4f4;
+  /* Light background color */
+  border: 2px solid burlywood;
+  /* Match with the footer theme */
+  border-radius: 5px;
+  /* Rounded edges */
   margin-top: 10px;
   margin-bottom: 15px;
   box-sizing: border-box;
@@ -500,11 +500,13 @@ button:disabled {
 
 .footer .footer-top .newsletter input[type="email"]:focus {
   outline: none;
-  border-color: #f39c12; /* Highlight border on focus */
-  box-shadow: 0 0 5px rgba(243, 156, 18, 0.5); /* Add shadow on focus */
+  border-color: #f39c12;
+  /* Highlight border on focus */
+  box-shadow: 0 0 5px rgba(243, 156, 18, 0.5);
+  /* Add shadow on focus */
 }
 
-.footer .footer-bottom{
+.footer .footer-bottom {
   align-content: center;
   text-align: center;
 }
@@ -521,47 +523,47 @@ button:disabled {
 
 @media (max-width: 768px) {
   .footer .footer-top {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 
   .footer .footer-top .img-icon {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
   }
 
   .footer .footer-top .social-links a {
-    margin: 0 5px; 
+    margin: 0 5px;
   }
 
   .footer .footer-top p {
-    font-size: 18px; 
+    font-size: 18px;
   }
 
   .footer .footer-top .newsletter input[type="email"] {
-    max-width: 100%; 
+    max-width: 100%;
     font-size: 14px;
   }
 
   .footer .footer-top .newsletter form {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
   }
 
   .footer .footer-top .newsletter .btn {
-    margin: 15px 0; 
+    margin: 15px 0;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .footer .footer-top {
-    grid-template-columns: repeat(2, auto); 
+    grid-template-columns: repeat(2, auto);
   }
 
   .footer .footer-top .links a {
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
   }
 
   .footer .footer-top p {
-    font-size: 18px; 
+    font-size: 18px;
   }
 }
