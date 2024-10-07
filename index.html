@@ -1,317 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sorting Hat Quiz</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="./icons/icon.png" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Playwrite+DE+Grund:wght@100..400&display=swap&family=Gabriela&display=swap&family=Special+Elite&display=swap&family=Playwrite+DE+Grund:wght@100..400&family=Vesper+Libre:wght@400;500;700;900&display=swap&family=Cinzel+Decorative:wght@400;700;900&family=Gloock&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=MedievalSharp&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-   <div class="light-sweep"></div>
-    <audio id="submitSound" src="protego-105518.mp3" preload="auto"></audio>
-    <audio id="backgroundSound" src="diagon_alley.mp3" loop ></audio>
-   
 
-    <div class="video-container">
-      <video autoplay muted loop>
-        <source src="assests\Hermione.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <h1 class="overlay-text">Which Hogwarts House Do You Belong To?</h1>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorting Hat Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./icons/icon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Playwrite+DE+Grund:wght@100..400&display=swap&family=Gabriela&display=swap&family=Special+Elite&display=swap&family=Playwrite+DE+Grund:wght@100..400&family=Vesper+Libre:wght@400;500;700;900&display=swap&family=Cinzel+Decorative:wght@400;700;900&family=Gloock&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=MedievalSharp&display=swap"
+    rel="stylesheet" />
+</head>
 
-    <div class="spell-container">
-      <img
-        class="logo-img"
-        src="https://wallpapercave.com/wp/wp2275854.png"
-        alt="logo"
-      />
-      <div class="spell-internal-container">
-        <div>
-          <h1>Spell of the day</h1>
-        </div>
-        <button id="generateSpellBtn">Today's Spell</button>
-        <div class="spell-box">
-          <span id="spellText" class="spell-text"></span>
-        </div>
+<body>
+  <div class="light-sweep"></div>
+  <audio id="submitSound" src="protego-105518.mp3" preload="auto"></audio>
+  <audio id="backgroundSound" src="diagon_alley.mp3" loop></audio>
+
+
+  <div class="video-container">
+    <video autoplay muted loop>
+      <source src="assests\Hermione.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <h1 class="overlay-text">Which Hogwarts House Do You Belong To?</h1>
+  </div>
+
+  <div class="spell-container">
+    <img class="logo-img" src="https://wallpapercave.com/wp/wp2275854.png" alt="logo" />
+    <div class="spell-internal-container">
+      <div>
+        <h1>Spell of the day</h1>
       </div>
-      <img
-        class="houses-img"
-        src="https://wallpapercave.com/wp/wp12750430.jpg"
-        alt="houses"
-      />
+      <button id="generateSpellBtn">Today's Spell</button>
+      <div class="spell-box">
+        <span id="spellText" class="spell-text"></span>
+      </div>
     </div>
-    <div class="container" id="quiz-container">
-      <p class="questP">Answer the questions below to find out your house!</p>
-      <div class="theme-buttons">
-        <button class="theme-button" data-theme="default">Default</button>
-        <button class="theme-button" data-theme="gryffindor">Gryffindor</button>
-        <button class="theme-button" data-theme="ravenclaw">Ravenclaw</button>
-        <button class="theme-button" data-theme="hufflepuff">Hufflepuff</button>
-        <button class="theme-button" data-theme="slytherin">Slytherin</button>
+    <img class="houses-img" src="https://wallpapercave.com/wp/wp12750430.jpg" alt="houses" />
+  </div>
+  <div class="container" id="quiz-container">
+    <p class="questP">Answer the questions below to find out your house!</p>
+    <div class="theme-buttons">
+      <button class="theme-button" data-theme="default">Default</button>
+      <button class="theme-button" data-theme="gryffindor">Gryffindor</button>
+      <button class="theme-button" data-theme="ravenclaw">Ravenclaw</button>
+      <button class="theme-button" data-theme="hufflepuff">Hufflepuff</button>
+      <button class="theme-button" data-theme="slytherin">Slytherin</button>
     </div>
-      <form id="quizForm">
-        <div class="question">
-          <h3>1. What do you value the most?</h3>
-          <label
-            ><input type="radio" name="q1" value="Gryffindor" /> Bravery</label
-          >
-          <label
-            ><input type="radio" name="q1" value="Ravenclaw" /> Knowledge</label
-          >
-          <label
-            ><input type="radio" name="q1" value="Hufflepuff" /> Loyalty</label
-          >
-          <label
-            ><input type="radio" name="q1" value="Slytherin" /> Ambition</label
-          >
-        </div>
-        <div class="question">
-          <h3>2. What would you do in a difficult situation?</h3>
-          <label
-            ><input type="radio" name="q2" value="Gryffindor" /> Face it
-            head-on</label
-          >
-          <label
-            ><input type="radio" name="q2" value="Ravenclaw" /> Think it through
-            logically</label
-          >
-          <label
-            ><input type="radio" name="q2" value="Hufflepuff" /> Seek help from
-            friends</label
-          >
-          <label
-            ><input type="radio" name="q2" value="Slytherin" /> Do what benefits
-            you the most</label
-          >
-        </div>
-        <div class="question">
-          <h3>3. What's your biggest strength?</h3>
-          <label
-            ><input type="radio" name="q3" value="Gryffindor" /> Courage</label
-          >
-          <label
-            ><input type="radio" name="q3" value="Ravenclaw" />
-            Intelligence</label
-          >
-          <label
-            ><input type="radio" name="q3" value="Hufflepuff" /> Patience</label
-          >
-          <label
-            ><input type="radio" name="q3" value="Slytherin" />
-            Determination</label
-          >
-        </div>
-        <div class="question">
-          <h3>4. How do you prefer to spend your free time?</h3>
-          <label
-            ><input type="radio" name="q4" value="Gryffindor" />
-            Adventuring</label
-          >
-          <label
-            ><input type="radio" name="q4" value="Ravenclaw" /> Reading</label
-          >
-          <label
-            ><input type="radio" name="q4" value="Hufflepuff" /> Helping
-            others</label
-          >
-          <label
-            ><input type="radio" name="q4" value="Slytherin" />
-            Networking</label
-          >
-        </div>
-        <div class="question">
-          <h3>5. What is your ideal pet?</h3>
-          <label
-            ><input type="radio" name="q5" value="Gryffindor" /> A brave
-            dog</label
-          >
-          <label
-            ><input type="radio" name="q5" value="Ravenclaw" /> An intelligent
-            owl</label
-          >
-          <label
-            ><input type="radio" name="q5" value="Hufflepuff" /> A loyal
-            cat</label
-          >
-          <label
-            ><input type="radio" name="q5" value="Slytherin" /> A clever
-            ferret</label
-          >
-        </div>
-        <div class="question">
-          <h3>6. Which of these words resonates with you the most?</h3>
-          <label
-            ><input type="radio" name="q6" value="Gryffindor" /> Fearless</label
-          >
-          <label><input type="radio" name="q6" value="Ravenclaw" /> Wise</label>
-          <label
-            ><input type="radio" name="q6" value="Hufflepuff" /> Kind</label
-          >
-          <label
-            ><input type="radio" name="q6" value="Slytherin" /> Cunning</label
-          >
-        </div>
-        <div class="question">
-          <h3>7. What kind of leader are you?</h3>
-          <label
-            ><input type="radio" name="q7" value="Gryffindor" /> Bold and
-            decisive</label
-          >
-          <label
-            ><input type="radio" name="q7" value="Ravenclaw" /> Thoughtful and
-            strategic</label
-          >
-          <label
-            ><input type="radio" name="q7" value="Hufflepuff" /> Supportive and
-            inclusive</label
-          >
-          <label
-            ><input type="radio" name="q7" value="Slytherin" /> Ambitious and
-            influential</label
-          >
-        </div>
-        <div class="question">
-          <h3>8. What would you like to be known for?</h3>
-          <label
-            ><input type="radio" name="q8" value="Gryffindor" /> Courageous
-            acts</label
-          >
-          <label
-            ><input type="radio" name="q8" value="Ravenclaw" />
-            Innovations</label
-          >
-          <label
-            ><input type="radio" name="q8" value="Hufflepuff" /> Kindness</label
-          >
-          <label
-            ><input type="radio" name="q8" value="Slytherin" /> Strategic
-            success</label
-          >
-        </div>
-        <div class="question">
-          <h3>
-            9. If you were at Hogwarts, what would be your favorite subject?
-          </h3>
-          <label
-            ><input type="radio" name="q9" value="Slytherin" /> Potions</label
-          >
-          <label
-            ><input type="radio" name="q9" value="Gryffindor" /> Defense Against
-            the Dark Arts</label
-          >
-          <label
-            ><input type="radio" name="q9" value="Hufflepuff" />
-            Herbology</label
-          >
-          <label
-            ><input type="radio" name="q9" value="Ravenclaw" />
-            Transfiguration</label
-          >
-        </div>
-        <div class="question">
-          <h3>10. What is your ideal way to spend a weekend?</h3>
-          <label
-            ><input type="radio" name="q10" value="Ravenclaw" /> Reading a book
-            or learning something new</label
-          >
-          <label
-            ><input type="radio" name="q10" value="Gryffindor" /> Going on an
-            adventure with friends</label
-          >
-          <label
-            ><input type="radio" name="q10" value="Hufflepuff" /> Spending time
-            with loved ones</label
-          >
-          <label
-            ><input type="radio" name="q10" value="Slytherin" /> Working on
-            personal goals or projects</label
-          >
-        </div>
-        <div class="question">
-          <h3>11. What is your biggest fear?</h3>
-          <label
-            ><input type="radio" name="q11" value="Slytherin" /> Failure</label
-          >
-          <label
-            ><input type="radio" name="q11" value="Gryffindor" /> Being
-            powerless</label
-          >
-          <label
-            ><input type="radio" name="q11" value="Hufflepuff" /> Losing those I
-            care about</label
-          >
-          <label
-            ><input type="radio" name="q11" value="Ravenclaw" /> Being
-            average</label
-          >
-        </div>
-        <div class="question">
-          <h3>12. Which color do you feel most drawn to?</h3>
-          <label
-            ><input type="radio" name="q12" value="Ravenclaw" /> Blue</label
-          >
-          <label
-            ><input type="radio" name="q12" value="Gryffindor" /> Red</label
-          >
-          <label
-            ><input type="radio" name="q12" value="Hufflepuff" /> Yellow</label
-          >
-          <label
-            ><input type="radio" name="q12" value="Slytherin" /> Green</label
-          >
-        </div>
-        <button type="submit">Get Sorted!</button>
-      </form>
-      <div id="result" class="result"></div>
-      <img id="houseImage" src="" alt="" style="display: none" />
-    </div>
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. What do you value the most?</h3>
+        <input type="radio" id="q1-option1" name="q1" value="Gryffindor" />
+        <label for="q1-option1">Bravery</label>
 
-     <!-- Footer Section -->
-     <footer class="footer">
-      <div class="footer-top">
+        <input type="radio" id="q1-option2" name="q1" value="Ravenclaw" />
+        <label for="q1-option2">Knowledge</label>
 
-        <div class="img-icon"></div>
+        <input type="radio" id="q1-option3" name="q1" value="Hufflepuff" />
+        <label for="q1-option3">Loyalty</label>
 
-        <div class="links">
-          <p>
-            <a href="#privacy">Privacy Policy</a> <br>
-            <a href="#terms">Terms of Service</a> <br>
-            <a href="#faq">FAQ</a>
-          </p>
-        </div>
-    
-        <div class="social-links">
-          <p>Follow us</p>
-            <a href="https://facebook.com" target="_blank"><i class="ri-facebook-fill"></i></a> 
-            <a href="https://twitter.com" target="_blank"><i class="ri-twitter-x-line"></i></a> 
-            <a href="https://instagram.com" target="_blank"><i class="ri-instagram-line"></i></a>
-        </div>
-    
-        <div class="newsletter">
-          <p>Subscribe to our newsletter:</p>
-          <form>
-            <input type="email" placeholder="Your email" required>
-            <button type="submit" class="btn">Subscribe</button>
-          </form>
-        </div>
+        <input type="radio" id="q1-option4" name="q1" value="Slytherin" />
+        <label for="q1-option4">Ambition</label>
+      </div>
+      <div class="question">
+        <h3>2. What would you do in a difficult situation?</h3>
+        <input type="radio" id="q2-option1" name="q2" value="Gryffindor" />
+        <label for="q2-option1">Face it head-on</label>
 
+        <input type="radio" id="q2-option2" name="q2" value="Ravenclaw" />
+        <label for="q2-option2">Think it through logically</label>
+
+        <input type="radio" id="q2-option3" name="q2" value="Hufflepuff" />
+        <label for="q2-option3">Seek help from friends</label>
+
+        <input type="radio" id="q2-option4" name="q2" value="Slytherin" />
+        <label for="q2-option4">Do what benefits you the most</label>
       </div>
 
-      <div class="footer-bottom">
-        <h4></h4>
+      <div class="question">
+        <h3>3. What's your biggest strength?</h3>
+        <input type="radio" id="q3-option1" name="q3" value="Gryffindor" />
+        <label for="q3-option1">Courage</label>
+
+        <input type="radio" id="q3-option2" name="q3" value="Ravenclaw" />
+        <label for="q3-option2">Intelligence</label>
+
+        <input type="radio" id="q3-option3" name="q3" value="Hufflepuff" />
+        <label for="q3-option3">Patience</label>
+
+        <input type="radio" id="q3-option4" name="q3" value="Slytherin" />
+        <label for="q3-option4">Determination</label>
       </div>
 
-    </footer>
+      <div class="question">
+        <h3>4. How do you prefer to spend your free time?</h3>
+        <input type="radio" id="q4-option1" name="q4" value="Gryffindor" />
+        <label for="q4-option1">Adventuring</label>
 
-    <script src="script.js"></script>
-  </body>
+        <input type="radio" id="q4-option2" name="q4" value="Ravenclaw" />
+        <label for="q4-option2">Reading</label>
+
+        <input type="radio" id="q4-option3" name="q4" value="Hufflepuff" />
+        <label for="q4-option3">Helping others</label>
+
+        <input type="radio" id="q4-option4" name="q4" value="Slytherin" />
+        <label for="q4-option4">Networking</label>
+      </div>
+
+      <div class="question">
+        <h3>5. What is your ideal pet?</h3>
+        <input type="radio" id="q5-option1" name="q5" value="Gryffindor" />
+        <label for="q5-option1">A brave dog</label>
+
+        <input type="radio" id="q5-option2" name="q5" value="Ravenclaw" />
+        <label for="q5-option2">An intelligent owl</label>
+
+        <input type="radio" id="q5-option3" name="q5" value="Hufflepuff" />
+        <label for="q5-option3">A loyal cat</label>
+
+        <input type="radio" id="q5-option4" name="q5" value="Slytherin" />
+        <label for="q5-option4">A clever ferret</label>
+      </div>
+
+      <div class="question">
+        <h3>6. Which of these words resonates with you the most?</h3>
+        <input type="radio" id="q6-option1" name="q6" value="Gryffindor" />
+        <label for="q6-option1">Fearless</label>
+
+        <input type="radio" id="q6-option2" name="q6" value="Ravenclaw" />
+        <label for="q6-option2">Wise</label>
+
+        <input type="radio" id="q6-option3" name="q6" value="Hufflepuff" />
+        <label for="q6-option3">Kind</label>
+
+        <input type="radio" id="q6-option4" name="q6" value="Slytherin" />
+        <label for="q6-option4">Cunning</label>
+      </div>
+
+      <div class="question">
+        <h3>7. What kind of leader are you?</h3>
+        <input type="radio" id="q7-option1" name="q7" value="Gryffindor" />
+        <label for="q7-option1">Bold and decisive</label>
+
+        <input type="radio" id="q7-option2" name="q7" value="Ravenclaw" />
+        <label for="q7-option2">Thoughtful and strategic</label>
+
+        <input type="radio" id="q7-option3" name="q7" value="Hufflepuff" />
+        <label for="q7-option3">Supportive and inclusive</label>
+
+        <input type="radio" id="q7-option4" name="q7" value="Slytherin" />
+        <label for="q7-option4">Ambitious and influential</label>
+      </div>
+      <div class="question">
+        <h3>8. What would you like to be known for?</h3>
+        <input type="radio" id="q8-option1" name="q8" value="Gryffindor" />
+        <label for="q8-option1">Courageous acts</label>
+
+        <input type="radio" id="q8-option2" name="q8" value="Ravenclaw" />
+        <label for="q8-option2">Innovations</label>
+
+        <input type="radio" id="q8-option3" name="q8" value="Hufflepuff" />
+        <label for="q8-option3">Kindness</label>
+
+        <input type="radio" id="q8-option4" name="q8" value="Slytherin" />
+        <label for="q8-option4">Strategic success</label>
+      </div>
+
+      <div class="question">
+        <h3>9. If you were at Hogwarts, what would be your favorite subject?</h3>
+        <input type="radio" id="q9-option1" name="q9" value="Slytherin" />
+        <label for="q9-option1">Potions</label>
+
+        <input type="radio" id="q9-option2" name="q9" value="Gryffindor" />
+        <label for="q9-option2">Defense Against the Dark Arts</label>
+
+        <input type="radio" id="q9-option3" name="q9" value="Hufflepuff" />
+        <label for="q9-option3">Herbology</label>
+
+        <input type="radio" id="q9-option4" name="q9" value="Ravenclaw" />
+        <label for="q9-option4">Transfiguration</label>
+      </div>
+
+      <div class="question">
+        <h3>10. What is your ideal way to spend a weekend?</h3>
+        <input type="radio" id="q10-option1" name="q10" value="Ravenclaw" />
+        <label for="q10-option1">Reading a book or learning something new</label>
+
+        <input type="radio" id="q10-option2" name="q10" value="Gryffindor" />
+        <label for="q10-option2">Going on an adventure with friends</label>
+
+        <input type="radio" id="q10-option3" name="q10" value="Hufflepuff" />
+        <label for="q10-option3">Spending time with loved ones</label>
+
+        <input type="radio" id="q10-option4" name="q10" value="Slytherin" />
+        <label for="q10-option4">Working on personal goals or projects</label>
+      </div>
+
+      <div class="question">
+        <h3>11. What is your biggest fear?</h3>
+        <input type="radio" id="q11-option1" name="q11" value="Slytherin" />
+        <label for="q11-option1">Failure</label>
+
+        <input type="radio" id="q11-option2" name="q11" value="Gryffindor" />
+        <label for="q11-option2">Being powerless</label>
+
+        <input type="radio" id="q11-option3" name="q11" value="Hufflepuff" />
+        <label for="q11-option3">Losing those I care about</label>
+
+        <input type="radio" id="q11-option4" name="q11" value="Ravenclaw" />
+        <label for="q11-option4">Being average</label>
+      </div>
+
+      <div class="question">
+        <h3>12. Which color do you feel most drawn to?</h3>
+        <input type="radio" id="q12-option1" name="q12" value="Ravenclaw" />
+        <label for="q12-option1">Blue</label>
+
+        <input type="radio" id="q12-option2" name="q12" value="Gryffindor" />
+        <label for="q12-option2">Red</label>
+
+        <input type="radio" id="q12-option3" name="q12" value="Hufflepuff" />
+        <label for="q12-option3">Yellow</label>
+
+        <input type="radio" id="q12-option4" name="q12" value="Slytherin" />
+        <label for="q12-option4">Green</label>
+      </div>
+      <button type="submit">Get Sorted!</button>
+    </form>
+    <div id="result" class="result"></div>
+    <img id="houseImage" src="" alt="" style="display: none" />
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-top">
+
+      <div class="img-icon"></div>
+
+      <div class="links">
+        <p>
+          <a href="#privacy">Privacy Policy</a> <br>
+          <a href="#terms">Terms of Service</a> <br>
+          <a href="#faq">FAQ</a>
+        </p>
+      </div>
+
+      <div class="social-links">
+        <p>Follow us</p>
+        <a href="https://facebook.com" target="_blank"><i class="ri-facebook-fill"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="ri-twitter-x-line"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="ri-instagram-line"></i></a>
+      </div>
+
+      <div class="newsletter">
+        <p>Subscribe to our newsletter:</p>
+        <form>
+          <input type="email" placeholder="Your email" required>
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <h4></h4>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
