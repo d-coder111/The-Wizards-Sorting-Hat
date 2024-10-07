@@ -363,3 +363,23 @@ window.onload = function() {
 const currentYear = new Date().getFullYear();
 document.querySelector(".footer-bottom h4").innerHTML = `Sorting Hat Quiz © ${currentYear} | All Rights Reserved.`;
 
+//after submitting the form
+
+const submitSound = document.querySelector('#submitSound');
+const quiz = document.getElementById("quizForm");
+const backgroundSound = document.querySelector("#backgroundSound");
+
+
+quiz.addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitSound.play();
+});
+
+
+document.getElementById("generateSpellBtn").addEventListener("click", () => {
+  event.preventDefault();
+  backgroundSound.play();
+  backgroundSound.loop();
+});
+
+
