@@ -75,6 +75,7 @@ const spells = [
   "Stupefy",
   "Wingardium Leviosa",
   "Alohomora",
+  "Lumos",
 ];
 
 function getSpellOfTheDay() {
@@ -204,13 +205,12 @@ function applyTheme(themeName) {
       font-family: "Arial", sans-serif;
       background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
       margin: 0;
-      padding: 20px;
     `;
     
     container.style.cssText = `
       max-width: 1918px;
       margin: -198px auto;
-      padding: 20px;
+      padding: 20px 40px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       position: relative;
@@ -359,6 +359,9 @@ window.onload = function() {
   loadStoredAnswer();
 };
 
+// modifying the year of copyright section
+const currentYear = new Date().getFullYear();
+document.querySelector(".footer-bottom h4").innerHTML = `Sorting Hat Quiz © ${currentYear} | All Rights Reserved.`;
 
 //after submitting the form
 
