@@ -106,6 +106,8 @@ const spells = [
   "Wingardium Leviosa",
   "Alohomora",
   "Lumos",
+  "Crucio",
+  "Imperio",
   "Reducto Curse",
   "Protego",
   "Expelliarmus",
