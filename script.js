@@ -56,6 +56,18 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
       "https://i.pinimg.com/564x/c1/4f/36/c14f36dea82449f6ee5af5c2a6007c66.jpg",
   };
 
+  // House gifs
+  const houseGifs = {
+    Gryffindor:
+      "https://media1.tenor.com/m/Fu-fVK5HNooAAAAC/gryffindor-hp.gif",
+    Ravenclaw:
+      "https://media1.tenor.com/m/YjQxv1coA24AAAAC/ravenclaw-harry.gif",
+    Hufflepuff:
+      "https://media1.tenor.com/m/xZ98ZQQmf0IAAAAC/hufflepuff-hp.gif",
+    Slytherin:
+      "https://media1.tenor.com/m/xUbaOIunGp4AAAAC/slytherin-hp.gif",
+  };
+
   // Display result
   const resultDiv = document.getElementById("result");
   resultDiv.innerHTML = `🎉 You belong to <strong>${assignedHouse}</strong>!<br>${houseDescriptions[assignedHouse]}`;
@@ -65,7 +77,25 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
   houseImage.src = houseImages[assignedHouse];
   houseImage.alt = `${assignedHouse} logo`;
   houseImage.style.display = "block";
+
+  // Display the house GIF
+  const houseGif = document.getElementById("gifOverlay");
+  houseGif.src = houseGifs[assignedHouse];
+  houseGif.alt = `${assignedHouse} GIF`;
+  houseGif.style.visibility = "visible";
+  houseGif.style.opacity = 1; // Fade in effect
+  houseGif.style.display = "block"; // Show the gif
+
+  // Set a timeout to fade out the GIF after 1 second
+  setTimeout(() => {
+    houseGif.style.opacity = 0; // Start fade-out
+    setTimeout(() => {
+      houseGif.style.visibility = "hidden"; // Hide the overlay after fading out
+      houseGif.style.display = "none"; // Ensure the GIF is not displayed
+    }, 1000); // Wait for the fade-out transition to complete
+  }, 1000);
 });
+
 
 const spells = [
   "Expecto Patronum",
@@ -76,6 +106,10 @@ const spells = [
   "Wingardium Leviosa",
   "Alohomora",
   "Lumos",
+  "Crucio",
+  "Imperio",
+  "Expelliarmus",
+  "Petrificus Totalus",
 ];
 
 function getSpellOfTheDay() {

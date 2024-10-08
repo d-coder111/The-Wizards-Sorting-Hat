@@ -567,3 +567,26 @@ button:disabled {
     font-size: 18px;
   }
 }
+
+
+/*----Styles for gifs----*/
+.gif-overlay {
+  position: fixed;           /* Fixed position to cover the entire screen */
+  top: 0;                   /* Align to the top */
+  left: 0;                  /* Align to the left */
+  width: 100vw;             /* Full viewport width */
+  height: 100vh;            /* Full viewport height */
+  background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+  display: flex;            /* Flexbox for centering */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  opacity: 0;               /* Start invisible */
+  transition: opacity 1s;   /* Smooth transition for fade-out */
+  z-index: 9999;            /* High z-index to ensure it's on top */
+  visibility: hidden;       /* Hidden initially */
+}
+
+.gif-overlay img {
+  max-width: none;          /* Allow original width */
+  max-height: none;         /* Allow original height */
+}
