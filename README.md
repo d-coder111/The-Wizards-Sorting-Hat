@@ -32,6 +32,7 @@ them into a house.
 - 💖Animations and Effects: Incorporate fun animations or effects during the sorting process.
 - 🔊Sound Effects: Add sound effects to enhance the overall user experience.
 - 💫Theme Options: Allow users to select different themes for the quiz interface.
+- 🔮Spells section: Include a "Spell of the Day" section and design it with a creative layout.
 
 #### 💡You are welcome to add your own better ideas and features to this project.
 
