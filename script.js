@@ -98,7 +98,7 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
 
 
 const spells = [
- "Expecto Patronum",
+  "Expecto Patronum",
   "Alarte Ascendare",
   "Avada Kedavra",
   "Accio",
@@ -108,20 +108,8 @@ const spells = [
   "Lumos",
   "Crucio",
   "Imperio",
-  "Reducto Curse",
-  "Protego",
   "Expelliarmus",
-  "Impervius Curse",
   "Petrificus Totalus",
-  "Sectumsempra",
-  "Incendio",
-  "Evanesco",
-  "Anapneo",
-  "Agua Extendio",
-  "Scourgify",
-  "Oculus Reparo",
-  "Legilimens",
-  "Metamorphmagus"
 ];
 
 function getSpellOfTheDay() {
@@ -240,13 +228,13 @@ const themeStyles = {
 
 // Function to apply theme
 function applyTheme(themeName) {
-  currentTheme = themeName;
   const container = document.getElementById('quiz-container');
   const questions = container.querySelectorAll('.question');
   const buttons = container.querySelectorAll('button');
   const labels = container.querySelectorAll('label');
 
   if (themeName === 'default') {
+    // Reset to original CSS styles
     document.body.style.cssText = `
       font-family: "Arial", sans-serif;
       background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
@@ -255,7 +243,7 @@ function applyTheme(themeName) {
     
     container.style.cssText = `
       max-width: 1918px;
-      margin: -198px auto;
+      margin: 105px auto 0 auto;
       padding: 20px 40px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -290,30 +278,10 @@ function applyTheme(themeName) {
         cursor: pointer;
         font-size: 1.2em;
         margin: 10px 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Existing shadow
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       `;
-      
-      button.addEventListener('mouseover', () => {
-        let glowColor;
-        if (currentTheme === 'default') {
-          glowColor = 'rgba(255, 255, 255, 0.7)'; 
-        } else if (currentTheme === 'gryffindor') {
-          glowColor = 'rgba(255, 215, 0, 0.7)'; 
-        } else if (currentTheme === 'ravenclaw') {
-          glowColor = 'rgba(0, 0, 255, 0.7)'; 
-        } else if (currentTheme === 'hufflepuff') {
-          glowColor = 'rgba(0, 0, 0, 0.7)'; 
-        } else if (currentTheme === 'slytherin') {
-          glowColor = 'rgba(0, 255, 0, 0.7)'; 
-        }
-        button.style.boxShadow = `0 0 20px ${glowColor}`; 
-      });
-      button.addEventListener('mouseout', () => {
-        button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'; 
-      });
     });
-
 
     labels.forEach(label => {
       label.style.cssText = `
@@ -389,9 +357,9 @@ function addDecorativeElements(themeName) {
 
   decorElement.style.cssText = `
     position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 40px;
+    top: -5px;
+    right: 15px;
+    font-size: 50px;
     z-index: 1000;
   `;
 }
@@ -448,4 +416,12 @@ document.getElementById("generateSpellBtn").addEventListener("click", () => {
   backgroundSound.loop();
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
 
+  // Toggle mobile menu
+  navToggle.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+  });
+});

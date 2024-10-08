@@ -140,13 +140,13 @@ h1 {
 }
 
 .video-container {
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: 59px;
   left: 0;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: 100%;
-  height: 266px;
+  height: 21rem;
   overflow: hidden;
   z-index: 2;
 }
@@ -154,7 +154,7 @@ h1 {
 video {
   width: 100%;
   opacity: 70%;
-  height: auto;
+  height: 100%;
   filter: brightness(130%);
   object-fit: cover;
 }
@@ -280,11 +280,12 @@ button:disabled {
 }
 
 .spell-container {
+  position: relative;
+  top: 80px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 262px 0px;
   padding: 20px;
 }
 
@@ -589,4 +590,130 @@ button:disabled {
 .gif-overlay img {
   max-width: none;          /* Allow original width */
   max-height: none;         /* Allow original height */
+}
+
+
+::-webkit-scrollbar {
+  background-color: #000;
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.5, #a520ca), color-stop(1, #2681cc));
+  border-radius: 10px;
+}
+
+
+/* Navigation Bar Styling */
+.navbar {
+  background-color: #111;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  position: absolute;
+  right: 130px;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  color: #f4d03f;
+}
+
+/* Toggle Button (for mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #111;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 2rem;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+}
+
+.contact-section p {
+  font-size: 1rem;
+}
+
+.contact-section a {
+  color: #111;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  color: #f4d03f;
 }
