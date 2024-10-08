@@ -98,7 +98,7 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
 
 
 const spells = [
-  "Expecto Patronum",
+ "Expecto Patronum",
   "Alarte Ascendare",
   "Avada Kedavra",
   "Accio",
@@ -108,8 +108,20 @@ const spells = [
   "Lumos",
   "Crucio",
   "Imperio",
+  "Reducto Curse",
+  "Protego",
   "Expelliarmus",
+  "Impervius Curse",
   "Petrificus Totalus",
+  "Sectumsempra",
+  "Incendio",
+  "Evanesco",
+  "Anapneo",
+  "Agua Extendio",
+  "Scourgify",
+  "Oculus Reparo",
+  "Legilimens",
+  "Metamorphmagus"
 ];
 
 function getSpellOfTheDay() {
@@ -228,13 +240,13 @@ const themeStyles = {
 
 // Function to apply theme
 function applyTheme(themeName) {
+  currentTheme = themeName;
   const container = document.getElementById('quiz-container');
   const questions = container.querySelectorAll('.question');
   const buttons = container.querySelectorAll('button');
   const labels = container.querySelectorAll('label');
 
   if (themeName === 'default') {
-    // Reset to original CSS styles
     document.body.style.cssText = `
       font-family: "Arial", sans-serif;
       background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
@@ -278,10 +290,30 @@ function applyTheme(themeName) {
         cursor: pointer;
         font-size: 1.2em;
         margin: 10px 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Existing shadow
       `;
+      
+      button.addEventListener('mouseover', () => {
+        let glowColor;
+        if (currentTheme === 'default') {
+          glowColor = 'rgba(255, 255, 255, 0.7)'; 
+        } else if (currentTheme === 'gryffindor') {
+          glowColor = 'rgba(255, 215, 0, 0.7)'; 
+        } else if (currentTheme === 'ravenclaw') {
+          glowColor = 'rgba(0, 0, 255, 0.7)'; 
+        } else if (currentTheme === 'hufflepuff') {
+          glowColor = 'rgba(0, 0, 0, 0.7)'; 
+        } else if (currentTheme === 'slytherin') {
+          glowColor = 'rgba(0, 255, 0, 0.7)'; 
+        }
+        button.style.boxShadow = `0 0 20px ${glowColor}`; 
+      });
+      button.addEventListener('mouseout', () => {
+        button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'; 
+      });
     });
+
 
     labels.forEach(label => {
       label.style.cssText = `
