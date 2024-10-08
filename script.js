@@ -98,7 +98,7 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
 
 
 const spells = [
-  "Expecto Patronum",
+ "Expecto Patronum",
   "Alarte Ascendare",
   "Avada Kedavra",
   "Accio",
@@ -114,17 +114,14 @@ const spells = [
   "Impervius Curse",
   "Petrificus Totalus",
   "Sectumsempra",
-  "Crucio",
-  "Imperio",
   "Incendio",
   "Evanesco",
   "Anapneo",
   "Agua Extendio",
-  "Reducto Curse",
   "Scourgify",
   "Oculus Reparo",
   "Legilimens",
-  "Metamorphmagus",
+  "Metamorphmagus"
 ];
 
 function getSpellOfTheDay() {
