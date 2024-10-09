@@ -38,4 +38,4 @@ them into a house.
 
 ### Enjoy finding out which Hogwarts house you truly belong to!🧙‍♂️✨
 
-#### 💟😊Want to add a little sparkle of encouragement? Tap the star button on the repository to show your support! 🌟
+#### 💟Want to add a little sparkle of encouragement? Tap the star button on the repository to show your support!⭐
