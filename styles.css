@@ -55,7 +55,7 @@ body {
 }
 
 .question input[type="radio"]:checked+label {
-  background: linear-gradient(135deg, #006400, #ADFF2F);
+  background: linear-gradient(135deg, #8A2BE2, #E6E6FA);
   color: white;
   border: 2px solid rgba(255, 0, 0, 0.9);
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
