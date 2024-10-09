@@ -424,3 +424,65 @@ window.addEventListener('scroll', function() {
   toTop.classList.remove("active")
  }
 });      
+
+// Get the wand cursor
+const wandCursor = document.getElementById('wandCursor');
+let lastMouseX = 0;
+let lastMouseY = 0;
+
+function wandPositionAnimation(x, y) {
+  createSparkle(x, y);
+  wandCursor.style.left = `${x}px`;
+  wandCursor.style.top = `${y}px`;
+}
+
+document.addEventListener('mousemove', function (e) {
+  lastMouseX = e.clientX;
+  lastMouseY = e.clientY;
+  wandPositionAnimation(e.pageX, e.pageY)
+});
+
+document.addEventListener('scroll', function (e) {
+  const scrollX = window.scrollX;
+  const scrollY = window.scrollY;
+  const absoluteX = lastMouseX + scrollX;
+  const absoluteY = lastMouseY + scrollY;
+  wandPositionAnimation(absoluteX, absoluteY)
+});
+
+function addRotation() {
+  wandCursor.style.transform = 'rotate(45deg)';
+  wandCursor.style.transformOrigin = '50% 0%';
+}
+
+function removeRotation() {
+  wandCursor.style.transform = 'translate(-25%, -25%)';
+}
+
+// Elements to hover over (button, label, etc.)
+const hoverElements = ['button', '.question label', '#generateSpellBtn'];
+
+// Add event listeners to the elements
+hoverElements.forEach(hoverElement => {
+  var elements = document.querySelectorAll(hoverElement);
+  elements.forEach(element => {
+    element.addEventListener('mouseenter', addRotation);  
+    element.addEventListener('mouseleave', removeRotation); 
+  })
+});
+
+// Function to create sparkles at the given position
+function createSparkle(x, y) {
+  const sparkle = document.createElement('div');
+  sparkle.className = 'sparkle';
+  document.body.appendChild(sparkle);
+
+  const offsetX = (Math.random() - 0.5) * 40; 
+  const offsetY = (Math.random() - 0.5) * 40;
+  sparkle.style.left = `${x + offsetX}px`;
+  sparkle.style.top = `${y + offsetY}px`;
+
+  setTimeout(() => {
+    sparkle.remove();
+  }, 500);
+}

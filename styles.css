@@ -1,8 +1,52 @@
+* {
+  cursor: none !important;
+}
+
 body {
   font-family: "Arial", sans-serif;
   background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
   margin: 0;
 }
+
+.custom-cursor {
+  position: absolute;
+  pointer-events: none;
+  width: 60px;
+  /* Adjust the size of the wand */
+  height: 60px;
+  /* Adjust the size of the wand */
+  transform: translate(-25%, -25%);
+  transition: transform 0.1s ease-out;
+  z-index: 10000;
+}
+
+/* Sparkle particle style */
+.sparkle {
+  position: absolute;
+  width: 2.5px;
+  height: 2.5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle-animation 0.8s ease-out forwards;
+  box-shadow: 0 0 10px 2px rgba(255, 157, 0, 0.5);
+  transition: all 0.2s;
+  z-index: 9999;
+}
+
+/* Sparkle particle animation */
+@keyframes sparkle-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+
 
 .container {
   max-width: 1918px;
