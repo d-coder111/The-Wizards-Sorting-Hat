@@ -7,10 +7,10 @@ them into a house.
 
 <div align="left">
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat&logo=github)](https://github.com/d-coder111/sorting-hat)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat&logo=github)](https://github.com/d-coder111/sorting-hat)
 [![Open Source Love](https://img.shields.io/badge/Open%20Source-%F0%9F%A4%8D-Green)](https://github.com/d-coder111/sorting-hat)
 [![contributions welcome](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3)](https://github.com/d-coder111/sorting-hat)
-[![Hacktoberfest-24](https://img.shields.io/static/v1.svg?label=Hacktoberfest-24&message=accepted&color=red)](https://github.com/d-coder111/sorting-hat)
+[![Hacktoberfest-24](https://img.shields.io/static/v1.svg?label=Hacktoberfest-24&message=Accepted&color=red)](https://github.com/d-coder111/sorting-hat)
 
 </div>
 
@@ -38,18 +38,4 @@ them into a house.
 
 ### Enjoy finding out which Hogwarts house you truly belong to!🧙‍♂️✨
 
-#### 💟😊Feel like sprinkling a little stardust of encouragement? Hit that star button on the repository to let us know you're cheering us on!🌟
-
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-<tr>
-<td align="center"><a href="https://github.com/alexwastaken"><kbd><img src="https://avatars.githubusercontent.com/u/9406781?v=4" width="100px;" alt=""/></kbd><br /><sub><b>alexwastaken</b></sub></a><br /> :computer:  </td>        
-<td align="center"><a href="https://github.com/d-coder111"><kbd><img src="https://avatars.githubusercontent.com/u/82580017?v=4" width="100px;" alt=""/></kbd><br /><sub><b>d-coder111  </b></sub></a><br /> :computer:  </td>
-  <td align="center"><a href="https://github.com/DewashishCodes"><kbd><img src="https://avatars.githubusercontent.com/u/176646422?v=4" width="100px;" alt=""/></kbd><br /><sub><b>DewashishCodes</b></sub></a><br /> :computer:  </td>
- <td align="center"><a href="https://github.com/D-Binara"><kbd><img src="https://avatars.githubusercontent.com/u/119029171?v=4" width="100px;" alt=""/></kbd><br /><sub><b>D-Binara</b></sub></a><br /> :computer:  </td>
-</tr>
-</table>
+#### 💟😊Want to add a little sparkle of encouragement? Tap the star button on the repository to show your support! 🌟
