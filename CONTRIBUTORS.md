@@ -19,7 +19,7 @@ Want to see your name here? Follow these simple steps:
 | GitHub Username | Contribution |
 |-----------------|--------------|
 | [d-coder111](https://github.com/d-coder111) | 🏗️ Project creator, developed core sorting idea, and designed the website. |
-| _AnushkaGupta2003_ | _Scroll to top button for better user experience while scrolling the website_ |
+| [AnushkaGupta2003](https://github.com/AnushkaGupta2003) | _Scroll to top button for better user experience while scrolling the website_ |
 
 ---
 
