@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="./icons/icon.png" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/9ce43fc1dc.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -16,36 +17,31 @@
 </head>
 
 <body>
-  <div class="light-sweep"></div>
-  <audio id="submitSound" src="protego-105518.mp3" preload="auto"></audio>
-  <audio id="backgroundSound" src="diagon_alley.mp3" loop></audio>
+  <img src="./assests/images/wand.png" class="custom-cursor" id="wandCursor" alt="Magic Wand">
+  <div class="relative w-full h-screen overflow-hidden">
+    <div class="light-sweep"></div>
+    <audio id="submitSound" src="protego-105518.mp3" preload="auto"></audio>
+    <audio id="backgroundSound" src="diagon_alley.mp3" loop></audio>
 
-
-  <div class="video-container">
-    <video autoplay muted loop>
-      <source src="assests\Hermione.mp4" type="video/mp4" />
+    <div class="absolute top-0 left-0 w-full h-full bg-black z-0"></div>
+    <video autoplay muted loop class="absolute top-0 left-0 opacity-30 w-full h-full object-cover z-10" style="width: 100vw; height: 100vh;">
+      <source src="assests/Hermione.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <h1 class="overlay-text">Which Hogwarts House Do You Belong To?</h1>
+    
+    <div>
+      <!-- Title Section -->
+
+        <h1 class="overlay-text">Which Hogwarts House Do You Belong To?</h1>
+        <img src="assests/images/clipart1985953.png" alt="Hogwarts Clipart" class="overlay-text" style="width: 500px; height: auto; margin-top: 350px; filter: brightness(90%);">
+
+    </div>
   </div>
 
-  <div class="spell-container">
-    <img class="logo-img" src="https://wallpapercave.com/wp/wp2275854.png" alt="logo" />
-    <div class="spell-internal-container">
-      <div>
-        <h1>Spell of the day</h1>
-      </div>
-      <button id="generateSpellBtn">Today's Spell</button>
-      <div class="spell-box">
-        <span id="spellText" class="spell-text"></span>
-      </div>
-    </div>
-    <img class="houses-img" src="https://wallpapercave.com/wp/wp12750430.jpg" alt="houses" />
-  </div>
   <div class="container" id="quiz-container">
     <p class="questP">Answer the questions below to find out your house!</p>
     <div class="theme-buttons">
-      <button class="theme-button" data-theme="default">Default</button>
+      <!-- <button class="theme-button" data-theme="default">Default</button> -->
       <button class="theme-button" data-theme="gryffindor">Gryffindor</button>
       <button class="theme-button" data-theme="ravenclaw">Ravenclaw</button>
       <button class="theme-button" data-theme="hufflepuff">Hufflepuff</button>
@@ -230,13 +226,27 @@
         <label for="q12-option4">Green</label>
       </div>
       <button type="submit">Get Sorted!</button>
-      </form>
-      <div id="result" class="result"></div>
-      <img id="houseImage" src="" alt="" style="display: none;" />
-      <img id="gifOverlay" class="gif-overlay" style="display: none;" />
-      
+    </form>
+    <div id="result" class="result"></div>
+    <img id="houseImage" src="" alt="" style="display: none;" />
+    <img id="gifOverlay" class="gif-overlay" style="display: none;" />
 
-  
+    <!-- Add this section here, under the result -->
+    <div class="spell-of-the-day-container">
+      <h2>Spell of the Day</h2>
+      <button id="generateSpellBtn" class="reveal-spell-btn">Reveal Today's Spell</button>
+      <div id="spellOfTheDay" class="spell-of-the-day">
+      </div>
+    </div>
+  </div>
+
+  <!-- FAB --> 
+  <a href="#top" class = "to-top">
+    
+    <img src="assests/images/upicon.png" alt="Hogwarts Clipart"  style="width: 60px; height: 60px;  filter: brightness(90%);">
+    <i class="fa-solid fa-arrow-up"></i>
+    
+  </a>
 
   <!-- Footer Section -->
   <footer class="footer">

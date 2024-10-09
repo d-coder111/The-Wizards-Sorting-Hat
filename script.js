@@ -56,18 +56,6 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
       "https://i.pinimg.com/564x/c1/4f/36/c14f36dea82449f6ee5af5c2a6007c66.jpg",
   };
 
-  // House gifs
-  const houseGifs = {
-    Gryffindor:
-      "https://media1.tenor.com/m/Fu-fVK5HNooAAAAC/gryffindor-hp.gif",
-    Ravenclaw:
-      "https://media1.tenor.com/m/YjQxv1coA24AAAAC/ravenclaw-harry.gif",
-    Hufflepuff:
-      "https://media1.tenor.com/m/xZ98ZQQmf0IAAAAC/hufflepuff-hp.gif",
-    Slytherin:
-      "https://media1.tenor.com/m/xUbaOIunGp4AAAAC/slytherin-hp.gif",
-  };
-
   // Display result
   const resultDiv = document.getElementById("result");
   resultDiv.innerHTML = `🎉 You belong to <strong>${assignedHouse}</strong>!<br>${houseDescriptions[assignedHouse]}`;
@@ -77,25 +65,7 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
   houseImage.src = houseImages[assignedHouse];
   houseImage.alt = `${assignedHouse} logo`;
   houseImage.style.display = "block";
-
-  // Display the house GIF
-  const houseGif = document.getElementById("gifOverlay");
-  houseGif.src = houseGifs[assignedHouse];
-  houseGif.alt = `${assignedHouse} GIF`;
-  houseGif.style.visibility = "visible";
-  houseGif.style.opacity = 1; // Fade in effect
-  houseGif.style.display = "block"; // Show the gif
-
-  // Set a timeout to fade out the GIF after 1 second
-  setTimeout(() => {
-    houseGif.style.opacity = 0; // Start fade-out
-    setTimeout(() => {
-      houseGif.style.visibility = "hidden"; // Hide the overlay after fading out
-      houseGif.style.display = "none"; // Ensure the GIF is not displayed
-    }, 1000); // Wait for the fade-out transition to complete
-  }, 1000);
 });
-
 
 const spells = [
   "Expecto Patronum",
@@ -106,10 +76,6 @@ const spells = [
   "Wingardium Leviosa",
   "Alohomora",
   "Lumos",
-  "Crucio",
-  "Imperio",
-  "Expelliarmus",
-  "Petrificus Totalus",
 ];
 
 function getSpellOfTheDay() {
@@ -130,18 +96,6 @@ function getDayOfYear(date) {
   const oneDay = 1000 * 60 * 60 * 24;
   return Math.floor(diff / oneDay);
 }
-
-document.getElementById("generateSpellBtn").addEventListener("click", () => {
-  const spellTextElement = document.getElementById("spellText");
-  const randomSpell = getSpellOfTheDay();
-
-  // Clear previous spell and reset animation
-  spellTextElement.style.animation = "none";
-  setTimeout(() => {
-    spellTextElement.textContent = randomSpell;
-    spellTextElement.style.animation = "";
-  }, 10); // Small delay to trigger reflow and restart animation
-});
 
 // Function to handle the option selection
 function handleOptionSelection() {
@@ -189,39 +143,35 @@ const themeStyles = {
     // The default theme will be handled separately
   },
   gryffindor: {
-    'background': 'linear-gradient(135deg, #740001 0%, #ae0001 100%)',
-    'color': '#ffc500',
-    'question-background': 'rgba(174, 0, 1, 0.7)',
-    'button-background': '#ffc500',
-    'button-color': '#740001',
-    'question-border': '2px solid #ffc500',
+    'color': '#FFC500',
+    'question-background': 'rgba(116, 0, 1, 0.7)',
+    'button-background': '#740001',
+    'button-color': '#FFC500',
+    'question-border': '2px solid #FFC500',
     'text-shadow': '1px 1px 2px #000'
   },
   ravenclaw: {
-    'background': 'linear-gradient(135deg, #0e1a40 0%, #222f5b 100%)',
-    'color': '#946b2d',
-    'question-background': 'rgba(34, 47, 91, 0.7)',
-    'button-background': '#946b2d',
-    'button-color': '#0e1a40',
-    'question-border': '2px solid #946b2d',
+    'color': '#946B2D',
+    'question-background': 'rgba(0, 10, 144, 0.7)',
+    'button-background': '#0E1A40',
+    'button-color': '#946B2D',
+    'question-border': '2px solid #946B2D',
     'text-shadow': '1px 1px 2px #000'
   },
   hufflepuff: {
-    'background': 'linear-gradient(135deg, #ecb939 0%, #f0c75e 100%)',
-    'color': '#372e29',
-    'question-background': 'rgba(240, 199, 94, 0.7)',
-    'button-background': '#372e29',
-    'button-color': '#ecb939',
-    'question-border': '2px solid #60605c',
-    'text-shadow': '1px 1px 2px #fff'
+    'color': '#ECB939',
+    'question-background': 'rgba(55, 46, 41, 0.7)',
+    'button-background': '#372E29',
+    'button-color': '#ECB939',
+    'question-border': '2px solid #ECB939',
+    'text-shadow': '1px 1px 2px #000'
   },
   slytherin: {
-    'background': 'linear-gradient(135deg, #1a472a 0%, #2a623d 100%)',
-    'color': '#aaaaaa',
-    'question-background': 'rgba(42, 98, 61, 0.7)',
-    'button-background': '#aaaaaa',
-    'button-color': '#1a472a',
-    'question-border': '2px solid #aaaaaa',
+    'color': '#AAAAAA',
+    'question-background': 'rgba(26, 71, 42, 0.7)',
+    'button-background': '#1A472A',
+    'button-color': '#AAAAAA',
+    'question-border': '2px solid #AAAAAA',
     'text-shadow': '1px 1px 2px #000'
   }
 };
@@ -234,71 +184,71 @@ function applyTheme(themeName) {
   const labels = container.querySelectorAll('label');
 
   if (themeName === 'default') {
-    // Reset to original CSS styles
-    document.body.style.cssText = `
-      font-family: "Arial", sans-serif;
-      background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
-      margin: 0;
-    `;
+    // // Reset to original CSS styles
+    // document.body.style.cssText = `
+    //   font-family: "Arial", sans-serif;
+    //   background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
+    //   margin: 0;
+    // `;
     
-    container.style.cssText = `
-      max-width: 1918px;
-      margin: -198px auto;
-      padding: 20px 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
-      background: none;
-      z-index: 0;
-      transition: all 0.3s ease;
-    `;
+    // container.style.cssText = `
+    //   max-width: 1918px;
+    //   margin: -198px auto;
+    //   padding: 20px 40px;
+    //   border-radius: 10px;
+    //   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    //   position: relative;
+    //   background: none;
+    //   z-index: 0;
+    //   transition: all 0.3s ease;
+    // `;
 
-    questions.forEach(question => {
-      question.style.cssText = `
-        font-family: 'libre-baskerville-bold', serif;
-        font-weight: 600;
-        color: white;
-        margin-bottom: 20px;
-        padding: 15px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        transition: background-color 0.3s;
-      `;
-    });
+    // questions.forEach(question => {
+    //   question.style.cssText = `
+    //     font-family: 'libre-baskerville-bold', serif;
+    //     font-weight: 600;
+    //     color: white;
+    //     margin-bottom: 20px;
+    //     padding: 15px;
+    //     border: 1px solid #ccc;
+    //     border-radius: 8px;
+    //     transition: background-color 0.3s;
+    //   `;
+    // });
 
-    buttons.forEach(button => {
-      button.style.cssText = `
-        display: block;
-        width: 100%;
-        padding: 10px;
-        background-color: #6200ea;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1.2em;
-        margin: 10px 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      `;
-    });
+    // buttons.forEach(button => {
+    //   button.style.cssText = `
+    //     display: block;
+    //     width: 100%;
+    //     padding: 10px;
+    //     background-color: #6200ea;
+    //     color: #fff;
+    //     border: none;
+    //     border-radius: 5px;
+    //     cursor: pointer;
+    //     font-size: 1.2em;
+    //     margin: 10px 5px;
+    //     transition: background-color 0.3s ease, transform 0.3s ease;
+    //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    //   `;
+    // });
 
-    labels.forEach(label => {
-      label.style.cssText = `
-        font-family: 'Gabriela', serif;
-        font-size: 22px;
-        color: yellow;
-        text-shadow: 0 0 3px black;
-        display: block;
-        background-color: #ff000017;
-        padding: 15px;
-        margin: 10px 0;
-        border-radius: 10px;
-        cursor: pointer;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      `;
-    });
+    // labels.forEach(label => {
+    //   label.style.cssText = `
+    //     font-family: 'Gabriela', serif;
+    //     font-size: 22px;
+    //     color: yellow;
+    //     text-shadow: 0 0 3px black;
+    //     display: block;
+    //     background-color: #ff000017;
+    //     padding: 15px;
+    //     margin: 10px 0;
+    //     border-radius: 10px;
+    //     cursor: pointer;
+    //     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    //     transition: background-color 0.3s ease, transform 0.3s ease;
+    //   `;
+    // });
   } else {
     const theme = themeStyles[themeName];
     document.body.style.background = theme['background'];
@@ -312,7 +262,7 @@ function applyTheme(themeName) {
 
     buttons.forEach(button => {
       button.style.backgroundColor = theme['button-background'];
-      button.style.color = theme['button-color'];
+      button.style.color = 'white'; // Always keep text white
     });
 
     labels.forEach(label => {
@@ -374,12 +324,7 @@ document.querySelectorAll('.theme-button').forEach(button => {
 
 // Function to apply the saved theme or default on page load
 function applySavedTheme() {
-  const savedTheme = localStorage.getItem('selectedTheme');
-  if (savedTheme && themeStyles.hasOwnProperty(savedTheme)) {
-    applyTheme(savedTheme);
-  } else {
-    applyTheme('default');
-  }
+  applyTheme('ravenclaw');
 }
 
 // Apply saved theme on page load
@@ -391,6 +336,17 @@ handleOptionSelection();
 // Load the previously stored answer when the page loads
 window.onload = function() {
   loadStoredAnswer();
+
+  // Automatically display the spell of the day
+  const spellTextElement = document.getElementById("spellText");
+  const spellOfTheDay = getSpellOfTheDay();
+  spellTextElement.textContent = spellOfTheDay;
+
+  // Ensure the spell text is positioned correctly before showing it
+  setTimeout(() => {
+    spellTextElement.style.opacity = '1';
+    spellTextElement.style.animation = 'levitate 3s ease-in-out infinite';
+  }, 100);
 };
 
 // modifying the year of copyright section
@@ -410,10 +366,123 @@ quiz.addEventListener('submit', function (event) {
 });
 
 
-document.getElementById("generateSpellBtn").addEventListener("click", () => {
-  event.preventDefault();
+window.addEventListener('load', () => {
   backgroundSound.play();
-  backgroundSound.loop();
+  backgroundSound.loop = false;
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const lightningBolt = document.createElement('img');
+  lightningBolt.src = 'assests/images/graybolt.png'; // Path to the image
+  lightningBolt.alt = 'Lightning Bolt';
+  lightningBolt.style.width = '50px'; // Set the size of the image
+  lightningBolt.style.position = 'absolute'; // Change to absolute positioning
+  lightningBolt.style.bottom = '5%'; // Position it 10% from the bottom of the first section
+  lightningBolt.style.left = '50%'; // Center it horizontally
+  lightningBolt.style.transform = 'translateX(-50%)'; // Adjust for centering
+  lightningBolt.style.cursor = 'pointer'; // Change cursor to pointer on hover
 
+  // Scroll to the quiz container when clicked
+  lightningBolt.addEventListener('click', () => {
+    const quizContainer = document.getElementById('quiz-container');
+    quizContainer.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Append the image to the first section
+  const firstSection = document.querySelector('.relative'); // Assuming this is the first section
+  firstSection.appendChild(lightningBolt); // Append the image to the first section
+  
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const generateSpellBtn = document.getElementById('generateSpellBtn');
+  const spellText = document.getElementById('spellText');
+  const spellOfTheDay = document.getElementById('spellOfTheDay');
+  const backgroundSound = document.getElementById('backgroundSound');
+
+  generateSpellBtn.addEventListener('click', () => {
+    const todaysSpell = getSpellOfTheDay();
+    spellOfTheDay.style.display = 'block';
+    generateSpellBtn.textContent = todaysSpell
+    
+    // Play background sound
+    backgroundSound.play();
+    backgroundSound.loop = true;
+  });
+});
+
+//fab
+
+var toTop = document.querySelector('.to-top');
+
+window.addEventListener('scroll', function() {
+ if(window.pageYOffset > 100) {
+  toTop.classList.add("active");
+ }
+ else
+ {
+  toTop.classList.remove("active")
+ }
+});      
+
+// Get the wand cursor
+const wandCursor = document.getElementById('wandCursor');
+let lastMouseX = 0;
+let lastMouseY = 0;
+
+function wandPositionAnimation(x, y) {
+  createSparkle(x, y);
+  wandCursor.style.left = `${x}px`;
+  wandCursor.style.top = `${y}px`;
+}
+
+document.addEventListener('mousemove', function (e) {
+  lastMouseX = e.clientX;
+  lastMouseY = e.clientY;
+  wandPositionAnimation(e.pageX, e.pageY)
+});
+
+document.addEventListener('scroll', function (e) {
+  const scrollX = window.scrollX;
+  const scrollY = window.scrollY;
+  const absoluteX = lastMouseX + scrollX;
+  const absoluteY = lastMouseY + scrollY;
+  wandPositionAnimation(absoluteX, absoluteY)
+});
+
+function addRotation() {
+  wandCursor.style.transform = 'rotate(45deg)';
+  wandCursor.style.transformOrigin = '50% 0%';
+}
+
+function removeRotation() {
+  wandCursor.style.transform = 'translate(-25%, -25%)';
+}
+
+// Elements to hover over (button, label, etc.)
+const hoverElements = ['button', '.question label', '#generateSpellBtn'];
+
+// Add event listeners to the elements
+hoverElements.forEach(hoverElement => {
+  var elements = document.querySelectorAll(hoverElement);
+  elements.forEach(element => {
+    element.addEventListener('mouseenter', addRotation);  
+    element.addEventListener('mouseleave', removeRotation); 
+  })
+});
+
+// Function to create sparkles at the given position
+function createSparkle(x, y) {
+  const sparkle = document.createElement('div');
+  sparkle.className = 'sparkle';
+  document.body.appendChild(sparkle);
+
+  const offsetX = (Math.random() - 0.5) * 40; 
+  const offsetY = (Math.random() - 0.5) * 40;
+  sparkle.style.left = `${x + offsetX}px`;
+  sparkle.style.top = `${y + offsetY}px`;
+
+  setTimeout(() => {
+    sparkle.remove();
+  }, 500);
+}

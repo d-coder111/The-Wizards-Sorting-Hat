@@ -1,12 +1,55 @@
+* {
+  cursor: none !important;
+}
+
 body {
   font-family: "Arial", sans-serif;
   background: radial-gradient(circle at center, #1b1f3b, #0a0c22, #000000);
   margin: 0;
 }
 
+.custom-cursor {
+  position: absolute;
+  pointer-events: none;
+  width: 60px;
+  /* Adjust the size of the wand */
+  height: 60px;
+  /* Adjust the size of the wand */
+  transform: translate(-25%, -25%);
+  transition: transform 0.1s ease-out;
+  z-index: 10000;
+}
+
+/* Sparkle particle style */
+.sparkle {
+  position: absolute;
+  width: 2.5px;
+  height: 2.5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle-animation 0.8s ease-out forwards;
+  box-shadow: 0 0 10px 2px rgba(255, 157, 0, 0.5);
+  transition: all 0.2s;
+  z-index: 9999;
+}
+
+/* Sparkle particle animation */
+@keyframes sparkle-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+
+
 .container {
   max-width: 1918px;
-  margin: -198px auto;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,7 +99,7 @@ body {
 }
 
 .question input[type="radio"]:checked+label {
-  background: linear-gradient(135deg, #006400, #ADFF2F);
+  background: linear-gradient(135deg, #8A2BE2, #E6E6FA);
   color: white;
   border: 2px solid rgba(255, 0, 0, 0.9);
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
@@ -170,11 +213,13 @@ video {
 }
 
 .questP {
-  font-family: 'almendra-display-regular', serif;
+  font-family: 'Cinzel Decorative', serif;
+  color: #fffae6;
   font-size: 2.5rem;
   margin: 1% 1%;
-  color: rgb(64, 255, 0);
+  color: #fff;
   text-shadow: 0px 0px 2px black;
+  text-align: center;
 }
 
 h3 {
@@ -192,7 +237,7 @@ label {
 
 .overlay-text {
   position: absolute;
-  top: 40%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -205,6 +250,61 @@ label {
     0 0 10px rgba(255, 255, 0, 0.8),
     0 0 20px rgba(255, 255, 0, 0.6),
     0 0 30px rgba(255, 255, 0, 0.4);
+}
+
+.spell-of-the-day-container {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 223, 0, 0.5);
+  max-width: 600px; /* Adjust as needed */
+}
+
+.spell-of-the-day-container h2 {
+  color: #f7d354;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.reveal-spell-btn {
+  background-color: #6200ea;
+  color: white;
+  font-family: 'Cinzel Decorative', serif;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reveal-spell-btn:hover {
+  background-color: #3700b3;
+  transform: translateY(-2px);
+}
+
+.spell-of-the-day {
+  margin-top: 20px;
+}
+
+.spell-text {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1.5em;
+  color: #f7d354;
+  text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+  animation: spellGlow 2s infinite alternate;
+}
+
+@keyframes spellGlow {
+  from {
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.5);
+  }
 }
 
 button:hover {
@@ -359,44 +459,6 @@ button:disabled {
   transition: box-shadow 0.4s ease-in-out;
 }
 
-.spell-text {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  display: inline-block;
-  border-right: 2px solid white;
-  white-space: nowrap;
-  overflow: hidden;
-  letter-spacing: 2px;
-  font-weight: 600;
-  background: linear-gradient(90deg, #fa9a1c, #7873f5, #42e695);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: writeText 2s steps(30, end), blinkCaret 0.75s step-end infinite;
-}
-
-@keyframes writeText {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blinkCaret {
-
-  from,
-  to {
-    border-color: transparent;
-  }
-
-  50% {
-    border-color: transparent;
-  }
-}
-
 /* --------- Footer section ----------- */
 .footer {
   background-color: hsla(20, 100%, 2%, 0.984);
@@ -407,7 +469,7 @@ button:disabled {
   padding: 30px;
   position: relative;
   bottom: 0;
-  margin-top: 14rem;
+  margin-top: 30px;
 }
 
 .footer .footer-top {
@@ -568,25 +630,55 @@ button:disabled {
   }
 }
 
-
-/*----Styles for gifs----*/
-.gif-overlay {
-  position: fixed;           /* Fixed position to cover the entire screen */
-  top: 0;                   /* Align to the top */
-  left: 0;                  /* Align to the left */
-  width: 100vw;             /* Full viewport width */
-  height: 100vh;            /* Full viewport height */
-  background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
-  display: flex;            /* Flexbox for centering */
-  justify-content: center;  /* Center horizontally */
-  align-items: center;      /* Center vertically */
-  opacity: 0;               /* Start invisible */
-  transition: opacity 1s;   /* Smooth transition for fade-out */
-  z-index: 9999;            /* High z-index to ensure it's on top */
-  visibility: hidden;       /* Hidden initially */
+.theme-buttons button {
+  color: white !important; /* Ensure text always stays white */
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.gif-overlay img {
-  max-width: none;          /* Allow original width */
-  max-height: none;         /* Allow original height */
+.theme-buttons button:hover,
+.theme-buttons button:active {
+  transform: scale(1.05);
 }
+
+@media (max-width: 1300px) {
+  .spell-of-the-day-container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+}
+
+/*FAB 
+*/
+.to-top {
+  z-index: 10;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  pointer-events: none;
+  border:#1f1f1f;
+   width: auto;
+  height:auto;
+  color: whitesmoke;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  opacity: 0;
+  transition: all .4s;
+}
+
+.to-top img {
+  display : block;
+}
+.to-top .fa-arrow-up {
+  position: absolute;
+  
+}
+
+.to-top.active {
+  
+cursor: pointer;
+ pointer-events: auto;
+ opacity:1
+}   
