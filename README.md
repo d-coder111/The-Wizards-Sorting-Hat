@@ -46,7 +46,8 @@ them into a house.
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-<tr>          
+<tr>
+<td align="center"><a href="https://github.com/alexwastaken"><kbd><img src="https://avatars.githubusercontent.com/u/9406781?v=4" width="100px;" alt=""/></kbd><br /><sub><b>alexwastaken</b></sub></a><br /> :computer:  </td>        
 <td align="center"><a href="https://github.com/d-coder111"><kbd><img src="https://avatars.githubusercontent.com/u/82580017?v=4" width="100px;" alt=""/></kbd><br /><sub><b>d-coder111  </b></sub></a><br /> :computer:  </td>
   <td align="center"><a href="https://github.com/DewashishCodes"><kbd><img src="https://avatars.githubusercontent.com/u/176646422?v=4" width="100px;" alt=""/></kbd><br /><sub><b>DewashishCodes</b></sub></a><br /> :computer:  </td>
  <td align="center"><a href="https://github.com/D-Binara"><kbd><img src="https://avatars.githubusercontent.com/u/119029171?v=4" width="100px;" alt=""/></kbd><br /><sub><b>D-Binara</b></sub></a><br /> :computer:  </td>
