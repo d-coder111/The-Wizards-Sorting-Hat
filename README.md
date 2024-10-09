@@ -20,10 +20,9 @@ them into a house.
 2. Fork the repository.
 3. Implement the features listed in the suggested improvements section. Feel free to contribute your own ideas for
    enhancing the project further.
-4. Add your name in contributors section as per the format.
-5. Commit and push your changes.
-6. Create a pull request to the original repository.
-7. Your pull request will be reviewed and merged.
+4. Commit and push your changes.
+5. Create a pull request to the original repository.
+6. Your pull request will be reviewed and merged.
 
 ### 🎯 Suggested Improvements:
 
