@@ -6,7 +6,6 @@ body {
 
 .container {
   max-width: 1918px;
-  margin: -198px auto;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -170,11 +169,13 @@ video {
 }
 
 .questP {
-  font-family: 'almendra-display-regular', serif;
+  font-family: 'Cinzel Decorative', serif;
+  color: #fffae6;
   font-size: 2.5rem;
   margin: 1% 1%;
-  color: rgb(64, 255, 0);
+  color: #fff;
   text-shadow: 0px 0px 2px black;
+  text-align: center;
 }
 
 h3 {
@@ -192,7 +193,7 @@ label {
 
 .overlay-text {
   position: absolute;
-  top: 40%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -205,6 +206,61 @@ label {
     0 0 10px rgba(255, 255, 0, 0.8),
     0 0 20px rgba(255, 255, 0, 0.6),
     0 0 30px rgba(255, 255, 0, 0.4);
+}
+
+.spell-of-the-day-container {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 223, 0, 0.5);
+  max-width: 600px; /* Adjust as needed */
+}
+
+.spell-of-the-day-container h2 {
+  color: #f7d354;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.reveal-spell-btn {
+  background-color: #6200ea;
+  color: white;
+  font-family: 'Cinzel Decorative', serif;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reveal-spell-btn:hover {
+  background-color: #3700b3;
+  transform: translateY(-2px);
+}
+
+.spell-of-the-day {
+  margin-top: 20px;
+}
+
+.spell-text {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1.5em;
+  color: #f7d354;
+  text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+  animation: spellGlow 2s infinite alternate;
+}
+
+@keyframes spellGlow {
+  from {
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.5);
+  }
 }
 
 button:hover {
@@ -359,44 +415,6 @@ button:disabled {
   transition: box-shadow 0.4s ease-in-out;
 }
 
-.spell-text {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  display: inline-block;
-  border-right: 2px solid white;
-  white-space: nowrap;
-  overflow: hidden;
-  letter-spacing: 2px;
-  font-weight: 600;
-  background: linear-gradient(90deg, #fa9a1c, #7873f5, #42e695);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: writeText 2s steps(30, end), blinkCaret 0.75s step-end infinite;
-}
-
-@keyframes writeText {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blinkCaret {
-
-  from,
-  to {
-    border-color: transparent;
-  }
-
-  50% {
-    border-color: transparent;
-  }
-}
-
 /* --------- Footer section ----------- */
 .footer {
   background-color: hsla(20, 100%, 2%, 0.984);
@@ -407,7 +425,7 @@ button:disabled {
   padding: 30px;
   position: relative;
   bottom: 0;
-  margin-top: 14rem;
+  margin-top: 30px;
 }
 
 .footer .footer-top {
@@ -565,5 +583,22 @@ button:disabled {
 
   .footer .footer-top p {
     font-size: 18px;
+  }
+}
+
+.theme-buttons button {
+  color: white !important; /* Ensure text always stays white */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.theme-buttons button:hover,
+.theme-buttons button:active {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1300px) {
+  .spell-of-the-day-container {
+    margin: 20px auto;
+    padding: 10px;
   }
 }
