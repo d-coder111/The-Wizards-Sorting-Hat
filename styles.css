@@ -602,3 +602,39 @@ button:disabled {
     padding: 10px;
   }
 }
+
+/*FAB 
+*/
+.to-top {
+  z-index: 10;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  pointer-events: none;
+  border:#1f1f1f;
+   width: auto;
+  height:auto;
+  color: whitesmoke;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  opacity: 0;
+  transition: all .4s;
+}
+
+.to-top img {
+  display : block;
+}
+.to-top .fa-arrow-up {
+  position: absolute;
+  
+}
+
+.to-top.active {
+  
+cursor: pointer;
+ pointer-events: auto;
+ opacity:1
+}   
