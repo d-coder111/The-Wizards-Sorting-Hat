@@ -18,7 +18,7 @@ Want to see your name here? Follow these simple steps:
 
 | GitHub Username | Contribution |
 |-----------------|--------------|
-| [d-coder111](https://github.com/d-coder111) | 🏗️ Project creator, developed core sorting algorithm, and designed the website. |
+| [d-coder111](https://github.com/d-coder111) | 🏗️ Project creator, developed core sorting idea, and designed the website. |
 | _Your Name Here_ | _Your Contribution_ |
 
 ---
