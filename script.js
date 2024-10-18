@@ -68,14 +68,14 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
 });
 
 const spells = [
-  "Expecto Patronum",
-  "Alarte Ascendare",
-  "Avada Kedavra",
-  "Accio",
-  "Stupefy",
-  "Wingardium Leviosa",
-  "Alohomora",
-  "Lumos",
+  "Expecto Patronum 🦌",    // A Patronus, often an animal like a stag.
+  "Alarte Ascendare 🦅",    // A spell that makes things ascend, represented by a flying bird.
+  "Avada Kedavra 💀",       // The killing curse, symbolized by a skull.
+  "Accio 🧲",               // A summoning spell, represented by a magnet for attraction.
+  "Stupefy ⚡",              // The stunning spell, represented by a lightning bolt.
+  "Wingardium Leviosa 🪄",   // The levitation spell, represented by a wand.
+  "Alohomora 🗝️",           // Unlocking spell, represented by a key.
+  "Lumos 🔦",               // The light-producing spell, represented by a flashlight.
 ];
 
 function getSpellOfTheDay() {
